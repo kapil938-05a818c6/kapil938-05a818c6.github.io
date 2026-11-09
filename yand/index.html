@@ -1,0 +1,2580 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yandex官网 - 搜索与生态服务平台</title>
+  <meta name="description" content="yandex官网是俄罗斯重要的搜索与互联网服务入口，汇集搜索引擎、地图、翻译、云服务、音乐与市场等产品，适合需要了解俄语区网络生态与工具的用户。">
+  <meta name="keywords" content="俄语搜索, 互联网服务, 地图导航, 机器翻译, 云平台">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e8342a'/%3E%3Cpath d='M8 10h16v3H8zm0 5h10v3H8zm0 5h16v3H8z' fill='%23fff'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --brand: #e8342a;
+      --brand-dark: #c0261e;
+      --brand-soft: #fde8e6;
+      --ink: #1c1d1f;
+      --ink-soft: #5e6168;
+      --line: #e5e7eb;
+      --bg: #f7f7f8;
+      --panel: #ffffff;
+      --accent: #ffd21e;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+      --font: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+      --max-w: 1320px;
+      --header-h: 60px;
+      --notice-h: 38px;
+      --sticky-offset: calc(var(--notice-h) + var(--header-h) + 12px);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 吸顶公告条 */
+    .notice-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--ink);
+      color: #fff;
+      height: var(--notice-h);
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+
+    .notice-bar .container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .notice-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .notice-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: sticky;
+      top: var(--notice-h);
+      z-index: 99;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+      height: var(--header-h);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .brand-mark svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+    }
+
+    .brand-text {
+      font-size: 19px;
+      letter-spacing: -0.01em;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .main-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .main-nav a {
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .main-nav a:hover {
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      text-decoration: none;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 0 4px 0 14px;
+      height: 36px;
+      width: 200px;
+      transition: border-color 0.15s;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--brand);
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 13px;
+      flex: 1;
+      min-width: 0;
+      color: var(--ink);
+      font-family: inherit;
+    }
+
+    .search-box input::placeholder {
+      color: #9ca3af;
+    }
+
+    .search-box button {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--ink-soft);
+      transition: background 0.15s;
+    }
+
+    .search-box button:hover {
+      background: var(--brand-soft);
+      color: var(--brand);
+    }
+
+    .search-box button svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      border-radius: 20px;
+      padding: 7px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: var(--brand-dark);
+      text-decoration: none;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+    }
+
+    .mobile-menu-btn svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(135deg, #fff 0%, #fef2f1 60%, #fde8e6 100%);
+      border-bottom: 1px solid var(--line);
+      padding: 56px 0 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -120px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,52,42,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .hero-badge svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--brand);
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--line);
+      border-radius: 20px;
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      background: #fff;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--brand);
+      background: var(--brand-soft);
+      text-decoration: none;
+      color: var(--brand-dark);
+    }
+
+    .hero-visual {
+      flex-shrink: 0;
+      width: 360px;
+      height: 280px;
+      position: relative;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 三栏门户布局 */
+    .portal-layout {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 240px;
+      gap: 28px;
+      padding: 32px 0 48px;
+      align-items: start;
+    }
+
+    /* 左频道栏 */
+    .channel-aside {
+      position: sticky;
+      top: var(--sticky-offset);
+    }
+
+    .channel-panel {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .channel-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      padding: 16px 18px 10px;
+    }
+
+    .channel-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      transition: background 0.15s, color 0.15s;
+      border-left: 3px solid transparent;
+    }
+
+    .channel-list a:hover {
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      text-decoration: none;
+    }
+
+    .channel-list a.active {
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      border-left-color: var(--brand);
+      font-weight: 600;
+    }
+
+    .channel-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: inherit;
+    }
+
+    .channel-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    /* 主内容 */
+    .main-content {
+      min-width: 0;
+    }
+
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 20px;
+      border-radius: 2px;
+      background: var(--brand);
+      flex-shrink: 0;
+    }
+
+    .section-more {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    .section-more:hover {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    /* 概览文本 */
+    .overview-card {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px 26px;
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 1.8;
+    }
+
+    .overview-card p + p {
+      margin-top: 12px;
+    }
+
+    .overview-card strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .content-card {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .content-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #e5e7eb;
+    }
+
+    .card-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--bg);
+      color: var(--ink-soft);
+      letter-spacing: 0.02em;
+    }
+
+    .tag-brand {
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
+    .card-hot {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--brand);
+      font-weight: 600;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .update-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s;
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+    }
+
+    .update-item:hover {
+      background: #fafafa;
+    }
+
+    .update-time {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--brand);
+      white-space: nowrap;
+      flex-shrink: 0;
+      width: 70px;
+      padding-top: 2px;
+    }
+
+    .update-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .update-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .update-summary {
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    .update-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 3px;
+      background: var(--brand);
+      color: #fff;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: var(--panel);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+      padding: 16px 14px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .category-item:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .category-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--brand-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand);
+    }
+
+    .category-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    .category-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 30px;
+    }
+
+    .deep-dive h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 22px 0 10px;
+      color: var(--ink);
+    }
+
+    .deep-dive h3:first-child {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .deep-dive ul, .deep-dive ol {
+      margin: 8px 0 14px 20px;
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 1.8;
+    }
+
+    .deep-dive li {
+      margin-bottom: 4px;
+    }
+
+    .deep-dive strong {
+      color: var(--ink);
+    }
+
+    /* 体验指南步骤 */
+    .guide-steps {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px 26px;
+      counter-reset: step;
+    }
+
+    .guide-step {
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      counter-increment: step;
+    }
+
+    .guide-step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .guide-step:first-child {
+      padding-top: 0;
+    }
+
+    .step-num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-num::before {
+      content: counter(step);
+    }
+
+    .step-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    /* FAQ */
+    .faq-list {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .faq-list details {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-list details:last-child {
+      border-bottom: none;
+    }
+
+    .faq-list summary {
+      padding: 15px 20px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: background 0.15s;
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list summary:hover {
+      background: #fafafa;
+    }
+
+    .faq-list summary::after {
+      content: "+";
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ink-soft);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .faq-list details[open] summary::after {
+      content: "−";
+    }
+
+    .faq-answer {
+      padding: 0 20px 16px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    /* 用户评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .comment-card {
+      background: var(--panel);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .comment-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .comment-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .comment-body {
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    .comment-target {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 2px;
+    }
+
+    .comment-target span {
+      color: var(--brand);
+      font-weight: 600;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-item:hover {
+      background: #fafafa;
+    }
+
+    .news-thumb {
+      width: 80px;
+      height: 60px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #e5e7eb;
+    }
+
+    .news-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .news-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 3px;
+      line-height: 1.4;
+    }
+
+    .news-summary {
+      font-size: 12.5px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .news-date {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
+    /* 相关推荐 */
+    .rec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 20px;
+    }
+
+    .rec-tag {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+
+    .rec-tag:hover {
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      border-color: var(--brand-soft);
+      text-decoration: none;
+    }
+
+    /* 热门榜单 */
+    .rank-list {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .rank-item:last-child {
+      border-bottom: none;
+    }
+
+    .rank-num {
+      width: 22px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #d1d5db;
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .rank-num.top {
+      color: var(--brand);
+    }
+
+    .rank-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      flex: 1;
+      min-width: 0;
+    }
+
+    .rank-score {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--brand);
+      flex-shrink: 0;
+    }
+
+    /* 右辅助栏 */
+    .aux-aside {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: sticky;
+      top: var(--sticky-offset);
+    }
+
+    .aux-panel {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .aux-title {
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 16px 10px;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .aux-title svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--brand);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .hot-list {
+      padding: 0 16px 12px;
+    }
+
+    .hot-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 13px;
+    }
+
+    .hot-item:last-child {
+      border-bottom: none;
+    }
+
+    .hot-rank {
+      width: 18px;
+      font-weight: 800;
+      font-size: 12px;
+      color: #d1d5db;
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .hot-rank.top {
+      color: var(--brand);
+    }
+
+    .hot-name {
+      flex: 1;
+      min-width: 0;
+      color: var(--ink);
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .hot-heat {
+      font-size: 11px;
+      color: #9ca3af;
+      flex-shrink: 0;
+    }
+
+    .timeline-list {
+      padding: 0 16px 14px;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 10px;
+      padding: 8px 0;
+      border-left: 2px solid var(--line);
+      padding-left: 14px;
+      margin-left: 6px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 14px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1px var(--brand);
+    }
+
+    .timeline-date {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--brand);
+      white-space: nowrap;
+      flex-shrink: 0;
+      width: 60px;
+    }
+
+    .timeline-text {
+      font-size: 12.5px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    .timeline-text strong {
+      color: var(--ink);
+      display: block;
+      font-size: 13px;
+      margin-bottom: 1px;
+    }
+
+    .trust-panel {
+      padding: 0 16px 16px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+      font-size: 13px;
+    }
+
+    .trust-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .trust-dot.high { background: #22c55e; }
+    .trust-dot.mid { background: #f59e0b; }
+    .trust-dot.low { background: #ef4444; }
+
+    .trust-label {
+      color: var(--ink-soft);
+    }
+
+    .trust-count {
+      margin-left: auto;
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    /* 筛选状态 */
+    .filter-status {
+      display: none;
+      background: var(--brand-soft);
+      border: 1px solid #f5c6c2;
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      font-size: 13px;
+      color: var(--brand-dark);
+      margin-bottom: 16px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .filter-status.show {
+      display: flex;
+    }
+
+    .filter-clear {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--brand-dark);
+      text-decoration: underline;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .no-results {
+      display: none;
+      padding: 24px;
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 14px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .no-results.show {
+      display: block;
+    }
+
+    /* 页尾 */
+    .site-footer {
+      background: var(--ink);
+      color: #9ca3af;
+      padding: 40px 0 28px;
+      margin-top: 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 28px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .footer-brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      background: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-brand-mark svg {
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+    }
+
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 300px;
+      color: #9ca3af;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: #9ca3af;
+      padding: 3px 0;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #374151;
+      padding-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .portal-layout {
+        grid-template-columns: 1fr 240px;
+      }
+      .channel-aside {
+        display: none;
+      }
+      .hero-visual {
+        width: 280px;
+        height: 220px;
+      }
+      h1 {
+        font-size: 34px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .portal-layout {
+        grid-template-columns: 1fr;
+      }
+      .aux-aside {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .hero-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-content {
+        text-align: center;
+      }
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-visual {
+        width: 260px;
+        height: 200px;
+      }
+      .main-nav {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: flex;
+      }
+      .search-box {
+        width: 140px;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .hero {
+        padding: 36px 0 32px;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      .hero-desc {
+        font-size: 14.5px;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+      .aux-aside {
+        grid-template-columns: 1fr;
+      }
+      .search-box {
+        display: none;
+      }
+      .header-actions .btn-primary {
+        display: none;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hero-visual {
+        width: 220px;
+        height: 170px;
+      }
+      .deep-dive {
+        padding: 20px 18px;
+      }
+      .guide-steps {
+        padding: 18px 16px;
+      }
+      .section-title {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .container {
+        padding: 0 14px;
+      }
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .category-item {
+        padding: 12px 8px;
+      }
+    }
+
+    /* 焦点可见 */
+    a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 20px;
+      background: var(--brand);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      z-index: 200;
+      font-size: 14px;
+    }
+
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+  <!-- 吸顶公告条 -->
+  <div class="notice-bar" role="banner">
+    <div class="container">
+      <span class="notice-dot" aria-hidden="true"></span>
+      <span class="notice-text">2026 年 11 月 8 日更新：Yandex Translate 新增 12 组语言对 · 云平台推出 GPU 推理实例 · 音乐秋季歌单上线</span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/#hero" class="brand" aria-label="yandex官网 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 4h14v2.5H5zm0 6.75h9v2.5H5zM5 17.5h14V20H5z"/></svg>
+        </span>
+        <span class="brand-text">yandex官网</span>
+      </a>
+
+      <nav class="main-nav" aria-label="主题导航">
+        <a href="/#overview">平台概览</a>
+        <a href="/#featured">精选产品</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box" role="search">
+          <input type="search" id="siteSearch" placeholder="搜索产品、服务…" aria-label="搜索产品与服务">
+          <button type="button" id="searchBtn" aria-label="执行搜索">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+          </button>
+        </div>
+        <a href="/#featured" class="btn-primary">开始探索</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开导航菜单" aria-expanded="false">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="hero-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 2 15 9l7 .6-5.4 4.7 1.6 6.9L12 17.7 5.8 21.2l1.6-6.9L2 9.6 9 9z"/></svg>
+          俄语区互联网生态入口
+        </span>
+        <h1>yandex官网</h1>
+        <p class="hero-desc">
+          汇聚搜索引擎、地图导航、机器翻译、云服务、音乐与推荐系统等核心产品，提供面向俄语区用户与开发者的工具索引、功能说明与更新动态。
+        </p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn-primary">浏览产品矩阵</a>
+          <a href="/#updates" class="btn-outline">查看今日更新</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 360 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="320" height="220" rx="16" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+          <rect x="36" y="52" width="120" height="14" rx="7" fill="#fde8e6"/>
+          <rect x="36" y="74" width="180" height="10" rx="5" fill="#f0f1f3"/>
+          <rect x="36" y="90" width="140" height="10" rx="5" fill="#f0f1f3"/>
+          <rect x="36" y="116" width="288" height="1" fill="#e5e7eb"/>
+          <rect x="36" y="132" width="80" height="60" rx="8" fill="#fde8e6"/>
+          <rect x="128" y="132" width="80" height="60" rx="8" fill="#f0f1f3"/>
+          <rect x="220" y="132" width="80" height="60" rx="8" fill="#fef3c7"/>
+          <rect x="36" y="204" width="160" height="10" rx="5" fill="#f0f1f3"/>
+          <rect x="36" y="220" width="120" height="10" rx="5" fill="#f0f1f3"/>
+          <circle cx="300" cy="64" r="16" fill="#e8342a" opacity="0.15"/>
+          <circle cx="300" cy="64" r="8" fill="#e8342a" opacity="0.4"/>
+          <path d="M40 40 L80 40" stroke="#e8342a" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏门户布局 -->
+  <div class="container portal-layout">
+
+    <!-- 左频道索引 -->
+    <aside class="channel-aside" aria-label="频道索引">
+      <div class="channel-panel">
+        <div class="channel-title">频道索引</div>
+        <nav class="channel-list" aria-label="频道分类">
+          <a href="/#overview" class="active">
+            <span class="channel-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span>
+            平台概览
+          </a>
+          <a href="/#featured">
+            <span class="channel-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+            精选产品
+          </a>
+          <a href="/#updates">
+            <span class="channel-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            最新动态
+          </a>
+          <a href="/#categories">
+            <span class="channel-icon"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></span>
+            分类入口
+          </a>
+          <a href="/#deep-dive">
+            <span class="channel-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            深度解析
+          </a>
+          <a href="/#guide">
+            <span class="channel-icon"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+            体验指南
+          </a>
+          <a href="/#faq">
+            <span class="channel-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg></span>
+            常见问题
+          </a>
+          <a href="/#comments">
+            <span class="channel-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.2A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg></span>
+            用户评论
+          </a>
+          <a href="/#news">
+            <span class="channel-icon"><svg viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0V9"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></svg></span>
+            相关资讯
+          </a>
+          <a href="/#recommend">
+            <span class="channel-icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4 5.6 21.2 8 14 2 9.2h7.6z"/></svg></span>
+            相关推荐
+          </a>
+          <a href="/#rank">
+            <span class="channel-icon"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span>
+            热门榜单
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- 中间主内容 -->
+    <main class="main-content" id="main-content">
+
+      <!-- 筛选状态提示 -->
+      <div class="filter-status" id="filterStatus">
+        <span>正在按分类筛选：<strong id="filterLabel"></strong></span>
+        <button type="button" class="filter-clear" id="filterClear">清除筛选</button>
+      </div>
+
+      <!-- 1. 主题领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-header">
+          <h2 class="section-title">平台概览</h2>
+          <a href="/#featured" class="section-more">查看产品 →</a>
+        </div>
+        <div class="overview-card">
+          <p>
+            <strong>yandex官网</strong> 所指的生态体系包含多个面向不同需求的产品方向。搜索与广告是核心入口，提供俄语、英语、土耳其语等多语种检索，并整合新闻、图片、视频与地图结果。地图与导航服务覆盖俄罗斯、白俄罗斯、哈萨克斯坦等地区，提供实时路况、公交时刻与室内地图。机器翻译支持超过 100 种语言互译，并具备文档翻译与网站翻译能力。
+          </p>
+          <p>
+            <strong>云服务</strong>方向提供虚拟机、对象存储、数据库、AI 推理与语音识别等能力，面向开发者与企业。音乐与音频平台收录数百万首曲目与播客，并提供个性化推荐。市场（Market）整合本地商家与电商平台，支持商品比价、用户评价与快速配送。另有技能教育平台、天气服务、邮件与浏览器等工具，构成完整的互联网服务矩阵。当前值得关注的方向包括：多语言大模型推理、地图室内导航更新、音乐秋季歌单与云平台 GPU 实例上线。
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="section" id="featured">
+        <div class="section-header">
+          <h2 class="section-title">精选产品与服务</h2>
+          <a href="/#categories" class="section-more">全部分类 →</a>
+        </div>
+        <div class="card-grid" id="featuredGrid">
+          <article class="content-card" data-category="search">
+            <img class="card-img" src="https://picsum.photos/seed/yandex-search01/400/300" alt="Yandex 搜索引擎结果页示意图" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-brand">搜索引擎</span>
+                <span class="tag">俄语检索</span>
+                <span class="tag">多语言</span>
+              </div>
+              <h3 class="card-title">Yandex 搜索</h3>
+              <p class="card-desc">支持俄语、英语、土耳其语等检索，整合新闻、图片、视频与地图结果，并提供个性化搜索建议与拼写纠正。</p>
+              <div class="card-meta">
+                <span>每日 1.2 亿+ 次查询</span>
+                <span class="card-hot">★ 4.8</span>
+              </div>
+            </div>
+          </article>
+          <article class="content-card" data-category="map">
+            <img class="card-img" src="https://picsum.photos/seed/yandex-map02/400/300" alt="Yandex 地图与导航界面示意图" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-brand">地图导航</span>
+                <span class="tag">实时路况</span>
+                <span class="tag">室内地图</span>
+              </div>
+              <h3 class="card-title">Yandex Maps</h3>
+              <p class="card-desc">覆盖俄罗斯、白俄罗斯、哈萨克斯坦等地区，提供实时路况、公交时刻、室内地图与街景浏览功能。</p>
+              <div class="card-meta">
+                <span>今日更新 32 个城市</span>
+                <span class="card-hot">★ 4.7</span>
+              </div>
+            </div>
+          </article>
+          <article class="content-card" data-category="translate">
+            <img class="card-img" src="https://picsum.photos/seed/yandex-trans03/400/300" alt="Yandex 翻译文档翻译界面示意图" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-brand">机器翻译</span>
+                <span class="tag">文档翻译</span>
+                <span class="tag">100+ 语言</span>
+              </div>
+              <h3 class="card-title">Yandex Translate</h3>
+              <p class="card-desc">支持超过 100 种语言互译，提供文档翻译、网站翻译与图片文字识别翻译，11 月新增 12 组语言对。</p>
+              <div class="card-meta">
+                <span>11 月 8 日更新</span>
+                <span class="card-hot">★ 4.6</span>
+              </div>
+            </div>
+          </article>
+          <article class="content-card" data-category="cloud">
+            <img class="card-img" src="https://picsum.photos/seed/yandex-cloud04/400/300" alt="Yandex 云平台控制台界面示意图" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-brand">云服务</span>
+                <span class="tag">GPU 推理</span>
+                <span class="tag">对象存储</span>
+              </div>
+              <h3 class="card-title">Yandex Cloud</h3>
+              <p class="card-desc">提供虚拟机、对象存储、数据库、AI 推理与语音识别，本周推出 GPU 推理实例，面向企业开发者。</p>
+              <div class="card-meta">
+                <span>11 月 6 日上线</span>
+                <span class="card-hot">★ 4.5</span>
+              </div>
+            </div>
+          </article>
+          <article class="content-card" data-category="music">
+            <img class="card-img" src="https://picsum.photos/seed/yandex-music05/400/300" alt="Yandex 音乐秋季歌单封面示意图" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-brand">音乐音频</span>
+                <span class="tag">秋季歌单</span>
+                <span class="tag">播客</span>
+              </div>
+              <h3 class="card-title">Yandex Music</h3>
+              <p class="card-desc">收录数百万首曲目与播客，提供个性化推荐、离线缓存与歌词同步，秋季歌单已更新 40 首曲目。</p>
+              <div class="card-meta">
+                <span>11 月 7 日更新</span>
+                <span class="card-hot">★ 4.6</span>
+              </div>
+            </div>
+          </article>
+          <article class="content-card" data-category="market">
+            <img class="card-img" src="https://picsum.photos/seed/yandex-market06/400/300" alt="Yandex Market 商品比价页面示意图" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-brand">电商市场</span>
+                <span class="tag">比价</span>
+                <span class="tag">本地商家</span>
+              </div>
+              <h3 class="card-title">Yandex Market</h3>
+              <p class="card-desc">整合本地商家与电商平台，支持商品比价、用户评价与快速配送，11 月新增 200 家本地商户。</p>
+              <div class="card-meta">
+                <span>11 月 5 日更新</span>
+                <span class="card-hot">★ 4.4</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="no-results" id="noResults">未找到匹配的产品，请尝试其他关键词或清除筛选。</div>
+      </section>
+
+      <!-- 3. 最新更新 -->
+      <section class="section" id="updates">
+        <div class="section-header">
+          <h2 class="section-title">最新动态</h2>
+          <a href="/#news" class="section-more">更多资讯 →</a>
+        </div>
+        <div class="update-list">
+          <div class="update-item">
+            <span class="update-time">今天 09:30</span>
+            <div class="update-content">
+              <div class="update-name">Yandex Translate 新增 12 组语言对 <span class="update-badge">新</span></div>
+              <div class="update-summary">包括哈萨克语—土耳其语、乌兹别克语—英语等方向，文档翻译同步支持。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">今天 08:15</span>
+            <div class="update-content">
+              <div class="update-name">Yandex Cloud 推出 GPU 推理实例</div>
+              <div class="update-summary">面向大模型推理场景，支持按秒计费，莫斯科与圣彼得堡区域可用。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">昨天 21:10</span>
+            <div class="update-content">
+              <div class="update-name">Yandex Music 秋季歌单更新 40 首曲目</div>
+              <div class="update-summary">涵盖俄语流行、独立摇滚与电子音乐，支持离线缓存与歌词同步。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">昨天 16:45</span>
+            <div class="update-content">
+              <div class="update-name">Yandex Maps 新增 32 个城市室内地图</div>
+              <div class="update-summary">覆盖购物中心、机场与火车站，支持楼层切换与店铺搜索。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">11 月 6 日</span>
+            <div class="update-content">
+              <div class="update-name">Yandex Market 接入 200 家本地商户</div>
+              <div class="update-summary">新增生鲜、家居与电子产品类目，支持当日达配送范围查询。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">11 月 5 日</span>
+            <div class="update-content">
+              <div class="update-name">Yandex 搜索优化新闻聚合排序</div>
+              <div class="update-summary">俄语新闻结果增加来源可信度标签，支持按时间与来源筛选。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">11 月 3 日</span>
+            <div class="update-content">
+              <div class="update-name">Yandex Browser 更新隐私面板</div>
+              <div class="update-summary">新增跟踪器拦截统计与指纹保护开关，桌面版同步更新。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">11 月 1 日</span>
+            <div class="update-content">
+              <div class="update-name">Yandex 天气上线 10 日趋势视图</div>
+              <div class="update-summary">支持按小时查看降水概率与风力变化，覆盖 800 余个城市。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">10 月 30 日</span>
+            <div class="update-content">
+              <div class="update-name">Yandex 云数据库新增 PostgreSQL 16 支持</div>
+              <div class="update-summary">提供逻辑复制与扩展监控指标，已有实例可预约升级。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">10 月 28 日</span>
+            <div class="update-content">
+              <div class="update-name">Yandex 教育平台上线编程新课程</div>
+              <div class="update-summary">涵盖 Python 数据分析与算法入门，提供俄语与英语版本。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="section" id="categories">
+        <div class="section-header">
+          <h2 class="section-title">分类入口</h2>
+          <span class="section-more">点击筛选产品卡片</span>
+        </div>
+        <div class="category-grid" id="categoryGrid">
+          <a href="/#featured" class="category-item" data-filter="search" role="button" tabindex="0">
+            <span class="category-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></span>
+            <span class="category-name">搜索引擎</span>
+          </a>
+          <a href="/#featured" class="category-item" data-filter="map" role="button" tabindex="0">
+            <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span class="category-name">地图导航</span>
+          </a>
+          <a href="/#featured" class="category-item" data-filter="translate" role="button" tabindex="0">
+            <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M4 5h12M10 3v2c0 4-3 7-6 8"/><path d="M6 9c2 3 5 5 8 6"/><path d="M14 15l3 6 3-6"/></svg></span>
+            <span class="category-name">机器翻译</span>
+          </a>
+          <a href="/#featured" class="category-item" data-filter="cloud" role="button" tabindex="0">
+            <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M18 10a5 5 0 0 0-9.6-1.6A5.5 5.5 0 0 0 7 19h11a5 5 0 0 0 0-9z"/></svg></span>
+            <span class="category-name">云服务</span>
+          </a>
+          <a href="/#featured" class="category-item" data-filter="music" role="button" tabindex="0">
+            <span class="category-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><path d="M11 18V5l10-2v13"/></svg></span>
+            <span class="category-name">音乐音频</span>
+          </a>
+          <a href="/#featured" class="category-item" data-filter="market" role="button" tabindex="0">
+            <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></span>
+            <span class="category-name">电商市场</span>
+          </a>
+          <a href="/#featured" class="category-item" data-filter="browser" role="button" tabindex="0">
+            <span class="category-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span>
+            <span class="category-name">浏览器</span>
+          </a>
+          <a href="/#featured" class="category-item" data-filter="weather" role="button" tabindex="0">
+            <span class="category-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg></span>
+            <span class="category-name">天气服务</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析 -->
+      <section class="section" id="deep-dive">
+        <div class="section-header">
+          <h2 class="section-title">深度解析</h2>
+        </div>
+        <div class="deep-dive">
+          <h3>搜索引擎的多语言检索差异</h3>
+          <p>
+            Yandex 搜索在俄语形态学处理上具备较深积累，能够识别词形变化并匹配同根词。与英语搜索相比，俄语查询更依赖词尾变化，因此搜索结果的相关性排序会优先考虑形态学匹配。对于中文用户，搜索英文或中文内容时，系统会结合语言识别与翻译索引返回结果，但俄语本地内容的时效性与覆盖率仍占优势。
+          </p>
+          <p>
+            在新闻聚合方面，<strong>Yandex 搜索</strong>会标注来源可信度与发布时间，并支持按来源筛选。图片搜索提供尺寸、颜色与版权筛选，视频搜索则整合平台内与外部来源。实际使用中，若目标为俄语区本地信息，直接使用俄语关键词效果更佳；若检索国际内容，可切换语言或使用翻译结果。
+          </p>
+
+          <h3>地图导航的室内与实时能力</h3>
+          <p>
+            Yandex Maps 的室内地图覆盖购物中心、机场、火车站与部分大学校园，支持楼层切换与店铺搜索。实时路况基于用户位置数据与交通事件上报，提供拥堵指数与替代路线。公交时刻表整合城市交通数据，部分城市支持实时到站预测。
+          </p>
+          <ul>
+            <li><strong>实时路况</strong>：覆盖俄罗斯主要城市，高峰期提供替代路线建议。</li>
+            <li><strong>室内地图</strong>：11 月新增 32 个城市，支持商户搜索与楼层导航。</li>
+            <li><strong>街景浏览</strong>：覆盖俄罗斯、白俄罗斯、哈萨克斯坦等地区，部分城市支持历史街景对比。</li>
+            <li><strong>公交时刻</strong>：整合地铁、公交、有轨电车，支持实时到站预测。</li>
+          </ul>
+
+          <h3>云服务与开发者工具的组合方式</h3>
+          <p>
+            Yandex Cloud 提供 IaaS 与 PaaS 能力，包括虚拟机、对象存储、托管数据库、AI 推理与语音识别。开发者可通过控制台或 API 管理资源，支持按秒计费与预留实例折扣。GPU 推理实例面向大模型部署场景，提供 NVIDIA A100 与 V100 选项。
+          </p>
+          <p>
+            典型组合方式包括：使用对象存储存放训练数据，通过 GPU 实例运行推理服务，利用托管 PostgreSQL 存储业务数据，并借助语音识别 API 处理音频内容。对于初创团队，云平台提供信用额度与技术支持计划，可按需申请。
+          </p>
+
+          <h3>音乐推荐与歌单更新机制</h3>
+          <p>
+            Yandex Music 的推荐系统基于收听历史、跳过行为与时段偏好生成个性化歌单。秋季歌单通常按流派与情绪分类，如“秋日独立”“通勤电子”“专注钢琴”。歌单每日更新，用户可保存至个人库并离线缓存。播客内容按类型与语言分类，支持倍速播放与睡眠定时。
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section class="section" id="guide">
+        <div class="section-header">
+          <h2 class="section-title">体验指南</h2>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <span class="step-num"></span>
+            <div class="step-body">
+              <div class="step-title">先确定目标语言与地区</div>
+              <div class="step-desc">若需检索俄语区本地信息，直接使用俄语关键词；若检索国际内容，可在搜索设置中切换语言或使用翻译结果辅助理解。</div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <span class="step-num"></span>
+            <div class="step-body">
+              <div class="step-title">地图导航优先查看实时路况</div>
+              <div class="step-desc">在 Yandex Maps 中输入起点与终点，开启实时路况图层，系统会标注拥堵路段并提供替代路线。室内导航需先搜索目标商场或车站。</div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <span class="step-num"></span>
+            <div class="step-body">
+              <div class="step-title">翻译长文档使用文档上传</div>
+              <div class="step-desc">Yandex Translate 支持 PDF、Word 与文本文件上传，保留原始排版。图片翻译可直接拍摄或上传图片，识别文字后输出译文。</div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <span class="step-num"></span>
+            <div class="step-body">
+              <div class="step-title">云服务先申请信用额度</div>
+              <div class="step-desc">新用户可通过官网申请测试信用额度，用于试用 GPU 推理与对象存储。计费按秒计算，建议设置预算告警。</div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <span class="step-num"></span>
+            <div class="step-body">
+              <div class="step-title">音乐歌单按场景筛选</div>
+              <div class="step-desc">秋季歌单按情绪与流派分类，通勤场景可选电子或流行，专注场景可选钢琴或环境音乐。保存后支持离线缓存。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="section" id="faq">
+        <div class="section-header">
+          <h2 class="section-title">常见问题</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Yandex 搜索支持中文检索吗？</summary>
+            <div class="faq-answer">支持。系统可识别中文查询并返回相关结果，但俄语本地内容的覆盖率更高。若检索中文内容，建议同时开启翻译结果或切换语言设置。</div>
+          </details>
+          <details>
+            <summary>Yandex Maps 的室内地图覆盖哪些场所？</summary>
+            <div class="faq-answer">主要覆盖购物中心、机场、火车站与部分大学校园。11 月新增 32 个城市，支持楼层切换与店铺搜索。室内导航需先搜索目标场所名称。</div>
+          </details>
+          <details>
+            <summary>Yandex Translate 的文档翻译支持哪些格式？</summary>
+            <div class="faq-answer">支持 PDF、Word（.docx）与纯文本文件。上传后保留原始排版，翻译完成后可下载。图片翻译支持 JPG 与 PNG 格式。</div>
+          </details>
+          <details>
+            <summary>Yandex Cloud 的 GPU 实例适合哪些场景？</summary>
+            <div class="faq-answer">适合大模型推理、图像识别、语音合成等需要并行计算的任务。提供 NVIDIA A100 与 V100 选项，按秒计费，支持按需与预留实例。</div>
+          </details>
+          <details>
+            <summary>Yandex Music 的歌单多久更新一次？</summary>
+            <div class="faq-answer">个性化歌单每日更新，秋季主题歌单按周更新曲目。用户可保存歌单至个人库，保存后支持离线缓存与跨设备同步。</div>
+          </details>
+          <details>
+            <summary>Yandex Market 支持哪些配送方式？</summary>
+            <div class="faq-answer">支持商家自发货与平台配送，部分城市提供当日达。配送范围与时效可在商品页输入地址查询，11 月新增 200 家本地商户。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="section" id="comments">
+        <div class="section-header">
+          <h2 class="section-title">用户评论</h2>
+        </div>
+        <div class="comment-grid">
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">莫</span>
+              <span class="comment-name">莫斯卡的雨</span>
+            </div>
+            <div class="comment-body">搜索俄语论文的时候用 Yandex 比 Google 更容易找到本地学术资料，词形匹配确实做得好。</div>
+            <div class="comment-target">评价 <span>Yandex 搜索</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">N</span>
+              <span class="comment-name">Nikita_2019</span>
+            </div>
+            <div class="comment-body">地图室内导航在莫斯科的商场里很实用，能直接找到店铺楼层，不过小城市覆盖还不多。</div>
+            <div class="comment-target">评价 <span>Yandex Maps</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">土</span>
+              <span class="comment-name">土耳其红茶</span>
+            </div>
+            <div class="comment-body">翻译文档功能保留排版这点不错，但专业术语偶尔会翻得生硬，需要人工校对。</div>
+            <div class="comment-target">评价 <span>Yandex Translate</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">云</span>
+              <span class="comment-name">云上漫步者</span>
+            </div>
+            <div class="comment-body">GPU 推理实例按秒计费对测试阶段很友好，就是控制台文档有些地方还是俄语优先。</div>
+            <div class="comment-target">评价 <span>Yandex Cloud</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">秋</span>
+              <span class="comment-name">秋日歌单控</span>
+            </div>
+            <div class="comment-body">秋季歌单质量很高，独立摇滚那组循环了一周。离线缓存下载速度也快。</div>
+            <div class="comment-target">评价 <span>Yandex Music</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">A</span>
+              <span class="comment-name">Alex_IT</span>
+            </div>
+            <div class="comment-body">Market 比价功能可以看历史价格曲线，买电子产品前会先查一下。</div>
+            <div class="comment-target">评价 <span>Yandex Market</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">白</span>
+              <span class="comment-name">白桦林间</span>
+            </div>
+            <div class="comment-body">浏览器隐私面板的跟踪器拦截统计很直观，指纹保护默认开启比较省心。</div>
+            <div class="comment-target">评价 <span>Yandex Browser</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">天</span>
+              <span class="comment-name">天气观察员</span>
+            </div>
+            <div class="comment-body">10 日趋势视图对安排出行有帮助，降水概率的准确度比之前用的应用高一些。</div>
+            <div class="comment-target">评价 <span>Yandex 天气</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">翻</span>
+              <span class="comment-name">翻译小陈</span>
+            </div>
+            <div class="comment-body">网站翻译功能用来读俄语新闻很方便，但部分动态加载的内容翻不出来。</div>
+            <div class="comment-target">评价 <span>Yandex Translate</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">K</span>
+              <span class="comment-name">Katerina</span>
+            </div>
+            <div class="comment-body">搜索的新闻来源标签有用，能快速过滤掉低质量站点。</div>
+            <div class="comment-target">评价 <span>Yandex 搜索</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">地</span>
+              <span class="comment-name">地图老刘</span>
+            </div>
+            <div class="comment-body">街景更新频率可以，部分路段还是两年前的画面，但整体够用。</div>
+            <div class="comment-target">评价 <span>Yandex Maps</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">音</span>
+              <span class="comment-name">音乐浪人</span>
+            </div>
+            <div class="comment-body">播客倍速播放和睡眠定时很实用，俄语学习类播客资源丰富。</div>
+            <div class="comment-target">评价 <span>Yandex Music</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">开</span>
+              <span class="comment-name">开发者小赵</span>
+            </div>
+            <div class="comment-body">对象存储的 API 文档清晰，SDK 覆盖 Python 和 Java，接入成本低。</div>
+            <div class="comment-target">评价 <span>Yandex Cloud</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">商</span>
+              <span class="comment-name">商家李姐</span>
+            </div>
+            <div class="comment-body">Market 本地商户入驻流程比想象中简单，审核三天内就通过了。</div>
+            <div class="comment-target">评价 <span>Yandex Market</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">学</span>
+              <span class="comment-name">学俄语的小王</span>
+            </div>
+            <div class="comment-body">翻译的图片识别准确率可以，菜单和路牌拍完就能看懂。</div>
+            <div class="comment-target">评价 <span>Yandex Translate</span></div>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">D</span>
+              <span class="comment-name">Dmitry</span>
+            </div>
+            <div class="comment-body">云数据库的 PostgreSQL 16 支持来得挺快，逻辑复制功能已经用上了。</div>
+            <div class="comment-target">评价 <span>Yandex Cloud</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-header">
+          <h2 class="section-title">相关资讯</h2>
+        </div>
+        <div class="news-list">
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/yandex-news11/600/400" alt="Yandex 翻译新增语言对资讯配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <h3 class="news-title">Yandex Translate 新增 12 组语言对，覆盖中亚与高加索语系</h3>
+              <p class="news-summary">11 月 8 日上线，包括哈萨克语—土耳其语、乌兹别克语—英语等方向，文档翻译同步支持。</p>
+              <div class="news-date">2026-11-08</div>
+            </div>
+          </article>
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/yandex-news12/600/400" alt="Yandex 云平台 GPU 实例资讯配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <h3 class="news-title">Yandex Cloud 推出 GPU 推理实例，按秒计费面向大模型场景</h3>
+              <p class="news-summary">莫斯科与圣彼得堡区域可用，提供 NVIDIA A100 与 V100 选项，已有用户申请测试额度。</p>
+              <div class="news-date">2026-11-06</div>
+            </div>
+          </article>
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/yandex-news13/600/400" alt="Yandex 音乐秋季歌单资讯配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <h3 class="news-title">Yandex Music 秋季歌单更新 40 首曲目，独立摇滚占比提升</h3>
+              <p class="news-summary">歌单按情绪与流派分类，新增“秋日独立”与“通勤电子”两组，支持离线缓存。</p>
+              <div class="news-date">2026-11-07</div>
+            </div>
+          </article>
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/yandex-news14/600/400" alt="Yandex 地图室内导航资讯配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <h3 class="news-title">Yandex Maps 新增 32 个城市室内地图，覆盖机场与购物中心</h3>
+              <p class="news-summary">支持楼层切换与店铺搜索，室内导航需先搜索目标场所名称。</p>
+              <div class="news-date">2026-11-05</div>
+            </div>
+          </article>
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/yandex-news15/600/400" alt="Yandex Market 本地商户资讯配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <h3 class="news-title">Yandex Market 接入 200 家本地商户，生鲜与家居类目扩充</h3>
+              <p class="news-summary">部分城市支持当日达，配送范围可在商品页输入地址查询。</p>
+              <div class="news-date">2026-11-03</div>
+            </div>
+          </article>
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/yandex-news16/600/400" alt="Yandex 搜索新闻排序资讯配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <h3 class="news-title">Yandex 搜索优化俄语新闻聚合排序，增加来源可信度标签</h3>
+              <p class="news-summary">支持按时间与来源筛选，低可信度站点将被降权处理。</p>
+              <div class="news-date">2026-10-30</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="section" id="recommend">
+        <div class="section-header">
+          <h2 class="section-title">相关推荐</h2>
+        </div>
+        <div class="rec-tags">
+          <a href="/#featured" class="rec-tag">俄语搜索引擎对比</a>
+          <a href="/#featured" class="rec-tag">Yandex Maps 室内导航</a>
+          <a href="/#featured" class="rec-tag">文档翻译保留排版</a>
+          <a href="/#featured" class="rec-tag">GPU 推理实例选型</a>
+          <a href="/#featured" class="rec-tag">秋季歌单推荐</a>
+          <a href="/#featured" class="rec-tag">Market 比价技巧</a>
+          <a href="/#featured" class="rec-tag">俄语学习播客</a>
+          <a href="/#featured" class="rec-tag">云数据库 PostgreSQL 16</a>
+        </div>
+      </section>
+
+      <!-- 11. 热门榜单 -->
+      <section class="section" id="rank">
+        <div class="section-header">
+          <h2 class="section-title">热门榜单</h2>
+          <span class="section-more">按综合热度排序</span>
+        </div>
+        <div class="rank-list">
+          <div class="rank-item">
+            <span class="rank-num top">1</span>
+            <span class="rank-name">Yandex 搜索</span>
+            <span class="rank-score">9.8</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num top">2</span>
+            <span class="rank-name">Yandex Maps</span>
+            <span class="rank-score">9.6</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num top">3</span>
+            <span class="rank-name">Yandex Translate</span>
+            <span class="rank-score">9.5</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">4</span>
+            <span class="rank-name">Yandex Cloud</span>
+            <span class="rank-score">9.3</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">5</span>
+            <span class="rank-name">Yandex Music</span>
+            <span class="rank-score">9.1</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">6</span>
+            <span class="rank-name">Yandex Market</span>
+            <span class="rank-score">8.9</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">7</span>
+            <span class="rank-name">Yandex Browser</span>
+            <span class="rank-score">8.7</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">8</span>
+            <span class="rank-name">Yandex 天气</span>
+            <span class="rank-score">8.5</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="aux-aside" aria-label="辅助信息">
+      <div class="aux-panel">
+        <div class="aux-title">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4 5.6 21.2 8 14 2 9.2h7.6z"/></svg>
+          今日热榜
+        </div>
+        <div class="hot-list">
+          <div class="hot-item"><span class="hot-rank top">1</span><span class="hot-name">Yandex 搜索</span><span class="hot-heat">9.8</span></div>
+          <div class="hot-item"><span class="hot-rank top">2</span><span class="hot-name">Yandex Maps</span><span class="hot-heat">9.6</span></div>
+          <div class="hot-item"><span class="hot-rank top">3</span><span class="hot-name">Yandex Translate</span><span class="hot-heat">9.5</span></div>
+          <div class="hot-item"><span class="hot-rank">4</span><span class="hot-name">Yandex Cloud</span><span class="hot-heat">9.3</span></div>
+          <div class="hot-item"><span class="hot-rank">5</span><span class="hot-name">Yandex Music</span><span class="hot-heat">9.1</span></div>
+          <div class="hot-item"><span class="hot-rank">6</span><span class="hot-name">Yandex Market</span><span class="hot-heat">8.9</span></div>
+        </div>
+      </div>
+
+      <div class="aux-panel">
+        <div class="aux-title">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          近期时间线
+        </div>
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <span class="timeline-date">11-08</span>
+            <div class="timeline-text"><strong>翻译新增 12 组语言对</strong>覆盖中亚与高加索语系</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">11-06</span>
+            <div class="timeline-text"><strong>GPU 推理实例上线</strong>按秒计费，莫斯科可用</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">11-05</span>
+            <div class="timeline-text"><strong>Market 接入 200 商户</strong>生鲜与家居类目扩充</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">11-03</span>
+            <div class="timeline-text"><strong>浏览器隐私面板更新</strong>新增指纹保护开关</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">10-30</span>
+            <div class="timeline-text"><strong>云数据库支持 PG 16</strong>逻辑复制与监控增强</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aux-panel">
+        <div class="aux-title">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          可信度分层
+        </div>
+        <div class="trust-panel">
+          <div class="trust-item">
+            <span class="trust-dot high"></span>
+            <span class="trust-label">官方产品页</span>
+            <span class="trust-count">8</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-dot mid"></span>
+            <span class="trust-label">社区讨论</span>
+            <span class="trust-count">15</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-dot low"></span>
+            <span class="trust-label">待核实来源</span>
+            <span class="trust-count">3</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <span class="footer-brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 4h14v2.5H5zm0 6.75h9v2.5H5zM5 17.5h14V20H5z"/></svg>
+            </span>
+            yandex官网
+          </div>
+          <p class="footer-desc">汇聚搜索引擎、地图导航、机器翻译、云服务与音乐等核心产品索引，面向俄语区用户与开发者提供工具说明与更新动态。</p>
+        </div>
+        <div class="footer-col">
+          <h4>产品入口</h4>
+          <a href="/#featured">搜索引擎</a>
+          <a href="/#featured">地图导航</a>
+          <a href="/#featured">机器翻译</a>
+          <a href="/#featured">云服务</a>
+        </div>
+        <div class="footer-col">
+          <h4>内容栏目</h4>
+          <a href="/#updates">最新动态</a>
+          <a href="/#deep-dive">深度解析</a>
+          <a href="/#guide">体验指南</a>
+          <a href="/#faq">常见问题</a>
+        </div>
+        <div class="footer-col">
+          <h4>社区与辅助</h4>
+          <a href="/#comments">用户评论</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#recommend">相关推荐</a>
+          <a href="/#rank">热门榜单</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 yandex官网 内容索引页 · 部分内容为示例数据，仅用于展示页面结构</span>
+        <span>页面内容以具体产品与功能说明为主，不构成官方声明</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+
+      // 移动端菜单按钮（占位，导航已隐藏，仅保持语义）
+      var mobileBtn = document.getElementById('mobileMenuBtn');
+      if (mobileBtn) {
+        mobileBtn.addEventListener('click', function() {
+          var expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', String(!expanded));
+          // 移动端导航已隐藏，此处仅切换状态；实际可扩展为显示菜单
+        });
+      }
+
+      // 搜索筛选
+      var searchInput = document.getElementById('siteSearch');
+      var searchBtn = document.getElementById('searchBtn');
+      var featuredGrid = document.getElementById('featuredGrid');
+      var noResults = document.getElementById('noResults');
+      var filterStatus = document.getElementById('filterStatus');
+      var filterLabel = document.getElementById('filterLabel');
+      var filterClear = document.getElementById('filterClear');
+      var categoryItems = document.querySelectorAll('.category-item[data-filter]');
+      var allCards = featuredGrid ? featuredGrid.querySelectorAll('.content-card') : [];
+      var currentCategory = null;
+
+      function clearFilter() {
+        currentCategory = null;
+        if (filterStatus) filterStatus.classList.remove('show');
+        if (searchInput) searchInput.value = '';
+        allCards.forEach(function(card) {
+          card.style.display = '';
+        });
+        if (noResults) noResults.classList.remove('show');
+      }
+
+      function applyFilter(category) {
+        currentCategory = category;
+        if (!featuredGrid) return;
+        var visibleCount = 0;
+        allCards.forEach(function(card) {
+          var cardCat = card.getAttribute('data-category');
+          if (cardCat === category) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        if (filterStatus) {
+          filterLabel.textContent = category;
+          filterStatus.classList.add('show');
+        }
+        if (noResults) {
+          if (visibleCount === 0) {
+            noResults.classList.add('show');
+          } else {
+            noResults.classList.remove('show');
+          }
+        }
+      }
+
+      // 分类筛选
+      categoryItems.forEach(function(item) {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          var cat = this.getAttribute('data-filter');
+          if (cat) {
+            applyFilter(cat);
+            document.getElementById('featured').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+        item.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+
+      // 清除筛选
+      if (filterClear) {
+        filterClear.addEventListener('click', function() {
+          clearFilter();
+          document.getElementById('featured').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      // 搜索功能
+      function performSearch() {
+        if (!searchInput || !featuredGrid) return;
+        var query = searchInput.value.trim().toLowerCase();
+        if (!query) {
+          clearFilter();
+          return;
+        }
+        var visibleCount = 0;
+        allCards.forEach(function(card) {
+          var text = card.textContent.toLowerCase();
+          if (text.indexOf(query) !== -1) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        if (filterStatus) {
+          filterLabel.textContent = '搜索：“' + searchInput.value.trim() + '”';
+          filterStatus.classList.add('show');
+        }
+        if (noResults) {
+          if (visibleCount === 0) {
+            noResults.classList.add('show');
+          } else {
+            noResults.classList.remove('show');
+          }
+        }
+        document.getElementById('featured').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      if (searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
+      }
+      if (searchInput) {
+        searchInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            performSearch();
+          }
+        });
+      }
+
+      // 点击空白清除筛选（点击卡片外区域）
+      document.addEventListener('click', function(e) {
+        if (filterStatus && filterStatus.classList.contains('show')) {
+          var isInsideFilter = filterStatus.contains(e.target) || (searchInput && searchInput.contains(e.target));
+          var isCategory = false;
+          categoryItems.forEach(function(item) {
+            if (item.contains(e.target)) isCategory = true;
+          });
+          if (!isInsideFilter && !isCategory && e.target.closest('#featured') === null) {
+            // 不自动清除，保留用户操作
+          }
+        }
+      });
+
+    })();
+  </script>
+</body>
+    </html>
