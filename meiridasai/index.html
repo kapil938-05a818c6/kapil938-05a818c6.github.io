@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛51在线观看 - 赛事直播与赛程聚合</title>
+<meta name="description" content="每日大赛51在线观看聚合每日大赛51的赛程、直播入口、赛事回放与选手动态，涵盖电竞赛事、知识竞赛与速通挑战的具体条目，适合关注每日大赛51赛程与对战结果的观众查阅。">
+<meta name="keywords" content="每日大赛51赛程,电竞对战直播,速通挑战排行,知识竞赛题库,赛事回放合集">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2a4a'/%3E%3Cpath d='M18 44 L32 16 L46 44 Z' fill='none' stroke='%23f5a623' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='38' r='4' fill='%23f5a623'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f4f6fb;
+  --panel:#ffffff;
+  --ink:#1a2233;
+  --ink-2:#48536b;
+  --ink-3:#7a8499;
+  --line:#e2e7f0;
+  --brand:#1b2a4a;
+  --brand-2:#2c4370;
+  --accent:#e8743b;
+  --accent-2:#f5a623;
+  --teal:#1f8a83;
+  --radius:12px;
+  --radius-sm:8px;
+  --shadow:0 2px 10px rgba(26,34,51,.06);
+  --shadow-hover:0 8px 22px rgba(26,34,51,.12);
+  --max:1320px;
+  --sticky-h:96px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{color:var(--accent)}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 12px}
+ul,ol{margin:0;padding-left:1.2em}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px;border-radius:4px}
+
+/* ===== 吸顶公告条 + 页头 ===== */
+.sticky-wrap{
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 4px 18px rgba(26,34,51,.10);
+}
+.announce{
+  background:linear-gradient(90deg,var(--brand) 0%,var(--brand-2) 60%,#35507f 100%);
+  color:#eef2fb;font-size:13px;
+}
+.announce-inner{
+  max-width:var(--max);margin:0 auto;padding:8px 20px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.announce .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--accent-2);
+  box-shadow:0 0 0 4px rgba(245,166,35,.25);flex:none;
+}
+.announce b{color:var(--accent-2)}
+.announce .sep{opacity:.4}
+.announce-more{margin-left:auto;color:#cfe0ff;border-bottom:1px dashed rgba(207,224,255,.5);white-space:nowrap}
+.announce-more:hover{color:#fff}
+
+.site-header{background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header-inner{
+  max-width:var(--max);margin:0 auto;padding:10px 20px;
+  display:flex;align-items:center;gap:22px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-text .logo-name{font-size:19px;font-weight:800;color:var(--brand);letter-spacing:.5px}
+.brand-text .logo-sub{font-size:11px;color:var(--ink-3);letter-spacing:2px}
+.main-nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+.main-nav a{
+  padding:6px 11px;border-radius:999px;font-size:14px;color:var(--ink-2);font-weight:500;
+  transition:.18s;
+}
+.main-nav a:hover{background:#eef3fc;color:var(--brand)}
+.header-actions{display:flex;align-items:center;gap:10px;flex:none}
+.search-box{position:relative}
+.search-box input{
+  width:180px;padding:7px 12px 7px 32px;border:1px solid var(--line);border-radius:999px;
+  font-size:13px;background:#f7f9fd;color:var(--ink);transition:.2s;
+}
+.search-box input:focus{width:220px;background:#fff;border-color:var(--brand-2);outline:none}
+.search-box::before{
+  content:"";position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  width:13px;height:13px;border:2px solid var(--ink-3);border-radius:50%;
+}
+.search-box::after{
+  content:"";position:absolute;left:21px;top:calc(50% + 4px);
+  width:6px;height:2px;background:var(--ink-3);transform:rotate(45deg);
+}
+.search-hint{
+  position:absolute;top:calc(100% + 8px);right:0;width:260px;background:#fff;
+  border:1px solid var(--line);border-radius:var(--radius-sm);box-shadow:var(--shadow-hover);
+  padding:10px 14px;font-size:13px;color:var(--ink-2);display:none;z-index:30;
+}
+.search-hint.show{display:block}
+.btn-live{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--accent);color:#fff;font-size:13px;font-weight:600;
+  padding:7px 15px;border-radius:999px;border:none;cursor:pointer;white-space:nowrap;
+}
+.btn-live:hover{background:#d4612a;color:#fff}
+.btn-live .pulse{width:7px;height:7px;border-radius:50%;background:#fff;animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ===== 布局 ===== */
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+.layout{
+  display:grid;
+  grid-template-columns:200px minmax(0,1fr) 280px;
+  gap:24px;
+  padding:24px 0 48px;
+  align-items:start;
+}
+.anchor-target{scroll-margin-top:var(--sticky-h)}
+
+/* ===== 首屏 ===== */
+.hero{
+  background:linear-gradient(135deg,#1b2a4a 0%,#243a63 55%,#2e4a7d 100%);
+  color:#eef2fb;position:relative;overflow:hidden;
+}
+.hero-inner{
+  max-width:var(--max);margin:0 auto;padding:44px 20px 40px;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:center;
+}
+.hero h1{
+  font-size:40px;letter-spacing:1px;margin-bottom:14px;
+  background:linear-gradient(90deg,#fff 30%,#ffd27a 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .hero-desc{font-size:15.5px;color:#c3d0e6;max-width:560px;margin-bottom:22px}
+.hero .hero-desc strong{color:#ffd27a;font-weight:600}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.hero-tags span{
+  font-size:12.5px;padding:4px 12px;border-radius:999px;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);color:#dbe6f7;
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero-cta a{
+  padding:11px 24px;border-radius:999px;font-size:14.5px;font-weight:600;transition:.2s;
+}
+.hero-cta .primary{background:var(--accent);color:#fff}
+.hero-cta .primary:hover{background:#d4612a;transform:translateY(-2px)}
+.hero-cta .ghost{border:1px solid rgba(255,255,255,.35);color:#eef2fb}
+.hero-cta .ghost:hover{background:rgba(255,255,255,.1)}
+
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-visual svg{width:100%;max-width:340px;height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,.35))}
+.hero-stat{
+  position:absolute;background:rgba(255,255,255,.95);color:var(--brand);
+  border-radius:10px;padding:8px 13px;font-size:12px;box-shadow:0 8px 20px rgba(0,0,0,.25);
+  font-weight:600;white-space:nowrap;
+}
+.hero-stat small{display:block;font-weight:400;color:var(--ink-3);font-size:10.5px}
+.hero-stat.s1{top:8%;left:-4%}
+.hero-stat.s2{bottom:12%;right:-2%}
+.hero-stat.s3{bottom:-4%;left:12%;background:var(--accent-2);color:#3a2600}
+.hero-stat.s3 small{color:#6b4a00}
+
+/* ===== 通用区块 ===== */
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.section-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  margin-bottom:16px;
+}
+.section-head h2{
+  font-size:21px;color:var(--brand);position:relative;padding-left:14px;
+}
+.section-head h2::before{
+  content:"";position:absolute;left:0;top:5px;bottom:5px;width:4px;border-radius:2px;
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+}
+.section-head .sub{font-size:13px;color:var(--ink-3)}
+.section-head .more{font-size:13px;color:var(--brand-2);font-weight:500}
+.section-head .more:hover{color:var(--accent)}
+
+.block{margin-bottom:38px}
+
+/* ===== 左频道索引 ===== */
+.channel-nav{padding:16px 12px}
+.channel-nav h2{font-size:13px;letter-spacing:1px;color:var(--ink-3);font-weight:600;padding:0 8px 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.channel-nav ul{list-style:none;padding:0;margin:0}
+.channel-nav li a{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:8px 10px;border-radius:var(--radius-sm);font-size:14px;color:var(--ink-2);
+  transition:.16s;
+}
+.channel-nav li a:hover{background:#eef3fc;color:var(--brand)}
+.channel-nav li a .cnt{font-size:11px;color:var(--ink-3);background:#f0f3fa;border-radius:999px;padding:1px 7px}
+.channel-nav .nav-note{
+  margin-top:14px;padding:12px;border-radius:var(--radius-sm);background:#f7f9fd;
+  font-size:12px;color:var(--ink-3);line-height:1.6;border-left:3px solid var(--accent-2);
+}
+
+/* ===== 概览 ===== */
+.overview-card{padding:22px 24px}
+.overview-card p{font-size:14.5px;color:var(--ink-2);text-indent:2em;margin-bottom:12px}
+.overview-card p:last-child{margin-bottom:0}
+.overview-facts{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px;
+  padding-top:16px;border-top:1px dashed var(--line);
+}
+.overview-facts div{text-align:center}
+.overview-facts strong{display:block;font-size:22px;color:var(--accent);font-weight:800;line-height:1.2}
+.overview-facts span{font-size:12px;color:var(--ink-3)}
+
+/* ===== 精选卡片 ===== */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);transition:.2s;display:flex;flex-direction:column;
+  min-width:0;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);border-color:#c9d5ea}
+.card-cover{position:relative;aspect-ratio:4/3;overflow:hidden;background:#e8eef8}
+.card-cover img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.card:hover .card-cover img{transform:scale(1.05)}
+.card-badge{
+  position:absolute;top:8px;left:8px;background:rgba(27,42,74,.88);color:#fff;
+  font-size:11px;padding:2px 8px;border-radius:999px;backdrop-filter:blur(4px);
+}
+.card-badge.hot{background:rgba(232,116,59,.92)}
+.card-body{padding:12px 14px 14px;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-size:15px;color:var(--brand);margin-bottom:6px;overflow-wrap:anywhere}
+.card-body h3:hover{color:var(--accent)}
+.card-body .card-desc{font-size:12.5px;color:var(--ink-2);line-height:1.6;margin-bottom:10px;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.card-tags span{font-size:11px;color:var(--teal);background:#e8f5f4;padding:1px 7px;border-radius:4px}
+.card-meta{
+  display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--ink-3);
+  padding-top:9px;border-top:1px solid var(--line);
+}
+.card-meta .score{color:var(--accent);font-weight:700;font-size:13px}
+.card-meta .score small{font-size:10px;color:var(--ink-3);font-weight:400}
+
+/* ===== 最新更新 ===== */
+.update-list{list-style:none;padding:0;margin:0}
+.update-list li{
+  display:flex;gap:14px;align-items:flex-start;padding:13px 18px;border-bottom:1px solid var(--line);
+  transition:.16s;
+}
+.update-list li:last-child{border-bottom:none}
+.update-list li:hover{background:#f8fafd}
+.update-time{
+  flex:none;width:70px;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;
+  padding-top:2px;
+}
+.update-main{flex:1;min-width:0}
+.update-main .u-title{font-size:14px;font-weight:600;color:var(--brand);margin-bottom:2px}
+.update-main .u-title:hover{color:var(--accent)}
+.update-main .u-text{font-size:12.5px;color:var(--ink-2);line-height:1.6}
+.update-tag{
+  flex:none;font-size:11px;padding:2px 8px;border-radius:999px;background:#eef3fc;color:var(--brand-2);
+  white-space:nowrap;margin-top:2px;
+}
+.update-tag.live{background:#fdece3;color:#c2541c}
+.update-tag.new{background:#e8f5f4;color:var(--teal)}
+
+/* ===== 分类入口 ===== */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px;
+  transition:.2s;display:block;
+}
+.cat-item:hover{border-color:var(--brand-2);transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.cat-item .cat-name{font-size:15px;font-weight:700;color:var(--brand);margin-bottom:4px}
+.cat-item .cat-desc{font-size:12px;color:var(--ink-3);line-height:1.55}
+.cat-item .cat-count{font-size:11px;color:var(--accent);margin-top:6px;font-weight:600}
+
+/* ===== 深度解析 ===== */
+.deep-card{padding:26px 28px}
+.deep-card h2{font-size:22px;color:var(--brand);margin-bottom:6px}
+.deep-card .deep-lead{font-size:13px;color:var(--ink-3);margin-bottom:20px;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.deep-card h3{
+  font-size:16.5px;color:var(--brand-2);margin:22px 0 10px;padding-left:12px;
+  border-left:4px solid var(--accent-2);
+}
+.deep-card p{font-size:14.5px;color:var(--ink-2);text-indent:2em;margin-bottom:12px}
+.deep-card ul,.deep-card ol{font-size:14px;color:var(--ink-2);margin-bottom:14px}
+.deep-card li{margin-bottom:6px}
+.deep-card li strong{color:var(--brand)}
+.callout{
+  background:#f7f9fd;border-left:4px solid var(--brand-2);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:14px 18px;margin:16px 0;font-size:13.5px;color:var(--ink-2);
+}
+.callout b{color:var(--brand)}
+.compare-table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+.compare-table th,.compare-table td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+.compare-table th{background:#eef3fc;color:var(--brand);font-weight:600}
+.compare-table td{color:var(--ink-2)}
+.compare-table tr:nth-child(even) td{background:#fafbfe}
+
+/* ===== 体验指南 ===== */
+.guide-steps{display:grid;gap:12px;counter-reset:step}
+.guide-step{
+  display:flex;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;align-items:flex-start;
+}
+.guide-step::before{
+  counter-increment:step;content:counter(step);
+  flex:none;width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;
+}
+.guide-step h3{font-size:15px;color:var(--brand);margin-bottom:4px}
+.guide-step p{font-size:13.5px;color:var(--ink-2);margin:0;line-height:1.65}
+
+/* ===== FAQ ===== */
+.faq-list{display:grid;gap:10px}
+.faq-list details{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+}
+.faq-list summary{
+  padding:14px 18px;font-size:14.5px;font-weight:600;color:var(--brand);cursor:pointer;
+  list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  transition:.15s;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{
+  content:"+";font-size:20px;color:var(--accent);font-weight:400;flex:none;line-height:1;
+  transition:.2s;
+}
+.faq-list details[open] summary{background:#f7f9fd;color:var(--brand-2)}
+.faq-list details[open] summary::after{content:"−";transform:rotate(180deg)}
+.faq-list .faq-body{padding:0 18px 16px;font-size:13.5px;color:var(--ink-2);line-height:1.75}
+.faq-list .faq-body p{margin-bottom:8px}
+.faq-list .faq-body p:last-child{margin-bottom:0}
+
+/* ===== 评论 ===== */
+.comment-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.comment-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.comment-head{display:flex;align-items:center;gap:9px}
+.avatar{
+  width:32px;height:32px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;color:#fff;
+}
+.comment-head .c-name{font-size:13px;font-weight:600;color:var(--brand)}
+.comment-head .c-time{font-size:11px;color:var(--ink-3);margin-left:auto}
+.comment-card .c-text{font-size:13px;color:var(--ink-2);line-height:1.65}
+.comment-card .c-item{
+  font-size:11.5px;color:var(--teal);background:#e8f5f4;border-radius:4px;padding:1px 7px;align-self:flex-start;
+}
+
+/* ===== 资讯 ===== */
+.news-list{display:grid;gap:14px}
+.news-item{
+  display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  transition:.2s;
+}
+.news-item:hover{border-color:#c9d5ea;box-shadow:var(--shadow-hover)}
+.news-item img{width:100%;height:100%;object-fit:cover;min-height:112px}
+.news-body{padding:14px 18px 14px 0;display:flex;flex-direction:column;justify-content:center}
+.news-body h3{font-size:15px;color:var(--brand);margin-bottom:5px}
+.news-body h3:hover{color:var(--accent)}
+.news-meta{font-size:11.5px;color:var(--ink-3);margin-bottom:6px;display:flex;gap:12px;flex-wrap:wrap}
+.news-meta .n-cat{color:var(--accent);font-weight:600}
+.news-body p{font-size:12.5px;color:var(--ink-2);line-height:1.6;margin:0}
+
+/* ===== 相关推荐标签 ===== */
+.reco-tags{display:flex;flex-wrap:wrap;gap:9px}
+.reco-tags a{
+  font-size:13px;padding:7px 16px;border-radius:999px;background:var(--panel);
+  border:1px solid var(--line);color:var(--ink-2);transition:.18s;
+}
+.reco-tags a:hover{background:var(--brand);color:#fff;border-color:var(--brand);transform:translateY(-2px)}
+.reco-tags a span{font-size:11px;color:var(--ink-3);margin-left:5px}
+.reco-tags a:hover span{color:#cfe0ff}
+
+/* ===== 榜单 / 时间线 ===== */
+.rank-list{list-style:none;padding:0;margin:0}
+.rank-list li{
+  display:flex;align-items:center;gap:12px;padding:11px 18px;border-bottom:1px solid var(--line);
+}
+.rank-list li:last-child{border-bottom:none}
+.rank-no{
+  flex:none;width:24px;height:24px;border-radius:6px;background:#eef3fc;color:var(--brand-2);
+  font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.rank-list li:nth-child(1) .rank-no{background:var(--accent);color:#fff}
+.rank-list li:nth-child(2) .rank-no{background:var(--accent-2);color:#3a2600}
+.rank-list li:nth-child(3) .rank-no{background:#c9d5ea;color:var(--brand)}
+.rank-name{flex:1;font-size:14px;font-weight:600;color:var(--brand);min-width:0;overflow-wrap:anywhere}
+.rank-name small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-3)}
+.rank-heat{flex:none;font-size:12px;color:var(--accent);font-weight:600}
+
+/* ===== 右辅助栏 ===== */
+.aside-panel{padding:16px 16px;margin-bottom:20px}
+.aside-panel h2{font-size:15px;color:var(--brand);margin-bottom:12px;padding-bottom:9px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:7px}
+.aside-panel h2::before{content:"";width:3px;height:14px;border-radius:2px;background:var(--accent)}
+.hot-aside-list{list-style:none;padding:0;margin:0}
+.hot-aside-list li{display:flex;gap:9px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px;line-height:1.5}
+.hot-aside-list li:last-child{border-bottom:none}
+.hot-aside-list .ha-no{flex:none;font-weight:700;color:var(--ink-3);font-size:12px;width:16px}
+.hot-aside-list li:nth-child(-n+3) .ha-no{color:var(--accent)}
+.hot-aside-list a{color:var(--ink-2);overflow-wrap:anywhere}
+.hot-aside-list a:hover{color:var(--accent)}
+
+.timeline-aside{list-style:none;padding:0;margin:0;position:relative}
+.timeline-aside::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline-aside li{position:relative;padding:0 0 14px 22px;font-size:12.5px;line-height:1.55}
+.timeline-aside li::before{
+  content:"";position:absolute;left:1px;top:6px;width:10px;height:10px;border-radius:50%;
+  background:#fff;border:2px solid var(--brand-2);
+}
+.timeline-aside li:first-child::before{background:var(--accent);border-color:var(--accent)}
+.timeline-aside .tl-date{font-size:11px;color:var(--accent);font-weight:600;display:block}
+.timeline-aside .tl-text{color:var(--ink-2)}
+
+.aside-subscribe{background:linear-gradient(135deg,#1b2a4a,#2c4370);color:#eef2fb;border-radius:var(--radius);padding:18px 16px}
+.aside-subscribe h2{color:#fff;border-bottom-color:rgba(255,255,255,.2)}
+.aside-subscribe h2::before{background:var(--accent-2)}
+.aside-subscribe p{font-size:12.5px;color:#c3d0e6;margin-bottom:12px}
+.aside-subscribe .sub-btn{
+  display:block;text-align:center;background:var(--accent);color:#fff;font-size:13px;font-weight:600;
+  padding:9px;border-radius:999px;transition:.2s;
+}
+.aside-subscribe .sub-btn:hover{background:#d4612a;color:#fff}
+
+/* ===== 页尾 ===== */
+.site-footer{background:#141d30;color:#9ca9c2;font-size:13px;margin-top:20px}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:40px 20px 0}
+.footer-top{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand .fb-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.footer-brand .fb-logo svg{width:34px;height:34px}
+.footer-brand .fb-name{font-size:17px;font-weight:800;color:#fff;letter-spacing:.5px}
+.footer-brand p{font-size:12.5px;line-height:1.75;color:#8b99b3;max-width:320px}
+.footer-col h3{font-size:13.5px;color:#e3eaf7;margin-bottom:12px;font-weight:600}
+.footer-col ul{list-style:none;padding:0;margin:0}
+.footer-col li{margin-bottom:8px}
+.footer-col a{color:#8b99b3;font-size:12.5px}
+.footer-col a:hover{color:var(--accent-2)}
+.footer-bottom{padding:18px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:#6f7d96}
+.footer-bottom .disclaimer{color:#6f7d96}
+
+/* ===== 响应式 ===== */
+@media(max-width:1100px){
+  .layout{grid-template-columns:180px minmax(0,1fr);}
+  .layout .aside-col{grid-column:1 / -1;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .layout .aside-col .aside-panel{margin-bottom:0}
+  .hero h1{font-size:34px}
+  .overview-facts{grid-template-columns:repeat(2,1fr);row-gap:14px}
+}
+@media(max-width:860px){
+  .layout{grid-template-columns:minmax(0,1fr);}
+  .channel-col{order:2}
+  .main-col{order:1}
+  .aside-col{order:3}
+  .channel-nav ul{display:flex;flex-wrap:wrap;gap:6px}
+  .channel-nav li{flex:1 1 auto}
+  .channel-nav li a{padding:7px 12px;background:#f4f7fd}
+  .channel-nav .nav-note{display:none}
+  .channel-nav h2{margin-bottom:12px}
+  .hero-inner{grid-template-columns:1fr;gap:28px;padding:34px 20px 36px}
+  .hero-visual{order:-1;max-width:280px;margin:0 auto}
+  .hero h1{font-size:30px}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .main-nav{display:none}
+  .search-box input{width:130px}
+  .search-box input:focus{width:160px}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:740px){
+  body{font-size:14.5px}
+  .header-inner{padding:8px 14px;gap:12px;flex-wrap:wrap}
+  .brand-text .logo-name{font-size:17px}
+  .header-actions{margin-left:auto}
+  .search-box input{width:110px;font-size:12px}
+  .search-box input:focus{width:140px}
+  .btn-live{padding:6px 12px;font-size:12px}
+  .announce-inner{padding:7px 14px;font-size:12px}
+  .announce-more{display:none}
+  .container{padding:0 14px}
+  .hero h1{font-size:26px}
+  .hero .hero-desc{font-size:14px}
+  .hero-cta a{padding:10px 20px;font-size:14px}
+  .hero-stat{font-size:11px;padding:6px 10px}
+  .card-grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+  .cat-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .cat-item{padding:13px 12px}
+  .update-list li{padding:11px 14px;flex-wrap:wrap;gap:8px}
+  .update-time{width:auto}
+  .update-tag{margin-left:auto}
+  .deep-card{padding:20px 18px}
+  .news-item{grid-template-columns:1fr}
+  .news-item img{height:150px;min-height:0}
+  .news-body{padding:12px 16px 16px}
+  .overview-card{padding:18px}
+  .overview-card p{text-indent:0}
+  .footer-top{grid-template-columns:1fr;gap:24px}
+  .footer-inner{padding:30px 14px 0}
+  .comment-grid{grid-template-columns:1fr}
+  .compare-table{font-size:12.5px}
+  .compare-table th,.compare-table td{padding:7px 9px}
+  .section-head h2{font-size:19px}
+  .hero-stat.s1{left:0}
+  .hero-stat.s2{right:0}
+}
+@media(max-width:380px){
+  .cat-grid{grid-template-columns:1fr}
+  .hero h1{font-size:23px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ===== 吸顶公告条 + 页头 ===== -->
+<div class="sticky-wrap">
+  <div class="announce" role="region" aria-label="赛事更新公告">
+    <div class="announce-inner">
+      <span class="dot" aria-hidden="true"></span>
+      <span>今日更新：<b>秋季对抗赛第 7 轮</b> 比赛回放已上线</span>
+      <span class="sep" aria-hidden="true">|</span>
+      <span>本周新增 <b>12 场</b> 速通挑战记录</span>
+      <span class="sep" aria-hidden="true">|</span>
+      <span>知识竞赛题库 11 月 6 日完成改版</span>
+      <a class="announce-more" href="#updates">查看更新明细 →</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="每日大赛51在线观看 首页">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1b2a4a"/><stop offset="1" stop-color="#2c4370"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="14" fill="url(#lg)"/>
+          <path d="M18 44 L32 16 L46 44 Z" fill="none" stroke="#f5a623" stroke-width="4" stroke-linejoin="round"/>
+          <circle cx="32" cy="37" r="4.5" fill="#e8743b"/>
+          <path d="M24 50 H40" stroke="#8fb0e8" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">
+          <span class="logo-name">每日大赛51在线观看</span>
+          <span class="logo-sub">DAILY MATCH 51</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="主题导航">
+        <a href="#updates">赛程更新</a>
+        <a href="#featured">精选对战</a>
+        <a href="#categories">赛事分类</a>
+        <a href="#deep">赛事解析</a>
+        <a href="#faq">常见问题</a>
+        <a href="#rank">积分榜</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="search" id="siteSearch" placeholder="搜索赛事/选手/条目" aria-label="站内搜索">
+          <div class="search-hint" id="searchHint" role="status" aria-live="polite"></div>
+        </div>
+        <a class="btn-live" href="#updates"><span class="pulse" aria-hidden="true"></span>直播中</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- ===== 主题首屏 ===== -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>每日大赛51在线观看</h1>
+      <p class="hero-desc">汇集每日大赛51的完整赛程、对战直播入口、比赛回放与选手表现记录，覆盖<strong>秋季对抗赛</strong>、<strong>速通挑战</strong>、<strong>知识竞赛</strong>与<strong>团队接力赛</strong>四条主线，按比赛日梳理每场对局的时间、规则与结果。</p>
+      <div class="hero-tags">
+        <span>秋季对抗赛第 7 轮</span>
+        <span>速通挑战周榜</span>
+        <span>知识竞赛题库改版</span>
+        <span>今日 4 场直播</span>
+      </div>
+      <div class="hero-cta">
+        <a class="primary" href="#updates">查看今日赛程</a>
+        <a class="ghost" href="#featured">进入精选对战</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 340 300" role="presentation">
+        <defs>
+          <linearGradient id="hv" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#e8743b"/>
+          </linearGradient>
+          <linearGradient id="hv2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#6f92d4"/><stop offset="1" stop-color="#2c4370"/>
+          </linearGradient>
+        </defs>
+        <!-- 对战面板 -->
+        <rect x="30" y="40" width="280" height="180" rx="18" fill="url(#hv2)" opacity=".35"/>
+        <rect x="46" y="58" width="248" height="144" rx="12" fill="#0f1a2e" stroke="#3d5a8f" stroke-width="2"/>
+        <!-- 左队 -->
+        <circle cx="100" cy="118" r="26" fill="url(#hv)" opacity=".9"/>
+        <path d="M88 118 l9 9 l17 -18" stroke="#1b2a4a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="100" y="164" text-anchor="middle" fill="#c3d0e6" font-size="12" font-family="sans-serif">红队 · 3 胜</text>
+        <!-- VS -->
+        <text x="170" y="128" text-anchor="middle" fill="#ffd27a" font-size="22" font-weight="bold" font-family="sans-serif">VS</text>
+        <!-- 右队 -->
+        <circle cx="240" cy="118" r="26" fill="#6f92d4" opacity=".85"/>
+        <path d="M230 110 l20 20 M250 110 l-20 20" stroke="#eef2fb" stroke-width="4" stroke-linecap="round"/>
+        <text x="240" y="164" text-anchor="middle" fill="#c3d0e6" font-size="12" font-family="sans-serif">蓝队 · 2 胜</text>
+        <!-- 进度条 -->
+        <rect x="70" y="182" width="200" height="6" rx="3" fill="#2c4370"/>
+        <rect x="70" y="182" width="128" height="6" rx="3" fill="url(#hv)"/>
+        <!-- 底部刻度 -->
+        <g fill="#8fb0e8" font-size="10" font-family="sans-serif" text-anchor="middle">
+          <text x="60" y="240">第 1 轮</text>
+          <text x="120" y="240">第 3 轮</text>
+          <text x="180" y="240">第 5 轮</text>
+          <text x="240" y="240">第 7 轮</text>
+          <text x="300" y="240">决赛</text>
+        </g>
+        <path d="M60 228 H300" stroke="#3d5a8f" stroke-width="2" stroke-dasharray="4 5"/>
+        <circle cx="240" cy="228" r="6" fill="#e8743b" stroke="#fff" stroke-width="2"/>
+      </svg>
+      <div class="hero-stat s1">今日 4 场<small>直播排期</small></div>
+      <div class="hero-stat s2">第 7 轮<small>秋季对抗赛</small></div>
+      <div class="hero-stat s3">51 场<small>累计对局</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 主内容区：三栏门户 ===== -->
+<div class="container">
+  <div class="layout">
+
+    <!-- 左频道索引 -->
+    <aside class="channel-col" aria-label="频道索引">
+      <nav class="channel-nav panel anchor-target" id="channels">
+        <h2>频道索引</h2>
+        <ul>
+          <li><a href="#updates">赛程更新<span class="cnt">12</span></a></li>
+          <li><a href="#featured">精选对战<span class="cnt">8</span></a></li>
+          <li><a href="#categories">赛事分类<span class="cnt">8</span></a></li>
+          <li><a href="#deep">赛事解析<span class="cnt">4</span></a></li>
+          <li><a href="#guide">观赛指南<span class="cnt">5</span></a></li>
+          <li><a href="#faq">常见问题<span class="cnt">6</span></a></li>
+          <li><a href="#comments">观众评论<span class="cnt">16</span></a></li>
+          <li><a href="#news">相关资讯<span class="cnt">6</span></a></li>
+          <li><a href="#reco">延伸方向<span class="cnt">8</span></a></li>
+          <li><a href="#rank">积分榜单<span class="cnt">10</span></a></li>
+        </ul>
+        <div class="nav-note">
+          <b>今日焦点</b><br>秋季对抗赛第 7 轮 19:30 开赛，红队对战蓝队，决胜局采用三局两胜制。
+        </div>
+      </nav>
+    </aside>
+
+    <!-- 主内容 -->
+    <main class="main-col">
+
+      <!-- 1. 主题领域概览 -->
+      <section class="block anchor-target" id="overview" aria-labelledby="h-overview">
+        <div class="section-head">
+          <h2 id="h-overview">每日大赛51领域概览</h2>
+          <span class="sub">四条赛事主线 · 51 场累计对局</span>
+        </div>
+        <div class="overview-card panel">
+          <p>每日大赛51是一类按比赛日连续推进的综合竞技赛事，核心由四条主线构成：秋季对抗赛以团队积分为主，每轮三局两胜；速通挑战按单局用时排名，每周结算一次；知识竞赛围绕题库出题，分个人赛与组队赛；团队接力赛强调交接棒效率，常见于周末场次。四条主线共享同一套比赛日历，因此观众可以在同一天看到不同规则的赛程。</p>
+          <p>从观赛角度看，秋季对抗赛适合看团队配合与临场调整，速通挑战适合看极限操作与路线优化，知识竞赛适合看题目覆盖面与抢答节奏，团队接力赛适合看交接环节的稳定性。每场比赛结束后会更新对局记录、用时与积分，观众可以按比赛日回看具体回合。</p>
+          <p>当前赛程处于秋季对抗赛第 7 轮，红队与蓝队积分接近，第 8 轮将决定小组头名归属。速通挑战周榜在 11 月 6 日刷新，速通选手“林照野”以 4 分 12 秒刷新单人纪录。知识竞赛题库在 11 月 6 日完成改版，新增 240 道题目，组队赛规则同步调整为先答对加分、答错扣分。</p>
+          <div class="overview-facts">
+            <div><strong>51</strong><span>累计对局</span></div>
+            <div><strong>4</strong><span>赛事主线</span></div>
+            <div><strong>12</strong><span>本周新增场次</span></div>
+            <div><strong>8</strong><span>参赛队伍</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="block anchor-target" id="featured" aria-labelledby="h-featured">
+        <div class="section-head">
+          <h2 id="h-featured">精选对战与挑战条目</h2>
+          <a class="more" href="#rank">查看积分榜 →</a>
+        </div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-cover">
+              <img src="https://picsum.photos/seed/match51-autumn07/400/300" alt="秋季对抗赛第7轮红队对蓝队比赛画面" width="400" height="300" loading="lazy">
+              <span class="card-badge hot">直播中</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#updates">秋季对抗赛第 7 轮：红队 vs 蓝队</a></h3>
+              <p class="card-desc">红队目前 3 胜 1 负，蓝队 2 胜 2 负。本场采用三局两胜制，首局地图由积分较低一方选择，决胜局回到中立地图。</p>
+              <div class="card-tags"><span>团队对抗</span><span>三局两胜</span><span>小组赛</span></div>
+              <div class="card-meta"><span>今晚 19:30</span><span class="score">9.2<small>/10</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-cover">
+              <img src="https://picsum.photos/seed/match51-speedrun-lin/400/300" alt="速通挑战选手林照野单人纪录画面" width="400" height="300" loading="lazy">
+              <span class="card-badge">周榜第一</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#updates">速通挑战：林照野 4 分 12 秒单人纪录</a></h3>
+              <p class="card-desc">11 月 6 日刷新的单人速通纪录，比原纪录快 9 秒。关键改动在第二段跳台路线，减少一次回头操作，第三段保留了原速通路线。</p>
+              <div class="card-tags"><span>速通挑战</span><span>单人纪录</span><span>路线优化</span></div>
+              <div class="card-meta"><span>11 月 6 日</span><span class="score">4:12<small>用时</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-cover">
+              <img src="https://picsum.photos/seed/match51-quiz-bank/400/300" alt="知识竞赛改版题库界面画面" width="400" height="300" loading="lazy">
+              <span class="card-badge new">新规则</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#news">知识竞赛题库改版：新增 240 题</a></h3>
+              <p class="card-desc">11 月 6 日完成改版，历史类题目占比提升至 32%。组队赛改为答对加分、答错扣分，抢答阶段每题限时 15 秒。</p>
+              <div class="card-tags"><span>知识竞赛</span><span>题库改版</span><span>组队赛</span></div>
+              <div class="card-meta"><span>11 月 6 日</span><span class="score">240<small>新增题</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-cover">
+              <img src="https://picsum.photos/seed/match51-relay-weekend/400/300" alt="周末团队接力赛交接棒环节画面" width="400" height="300" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3><a href="#updates">团队接力赛周末场：交接棒效率榜</a></h3>
+              <p class="card-desc">周末场共 6 队参加，交接棒环节平均耗时 2.8 秒。青队以 2.1 秒的平均交接耗时排名第一，红队因两次失误掉到第四。</p>
+              <div class="card-tags"><span>团队接力</span><span>周末场</span><span>交接效率</span></div>
+              <div class="card-meta"><span>11 月 7 日</span><span class="score">2.1s<small>平均交接</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-cover">
+              <img src="https://picsum.photos/seed/match51-autumn06/400/300" alt="秋季对抗赛第6轮决胜局回放画面" width="400" height="300" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3><a href="#updates">第 6 轮决胜局回放：红队 2:1 逆转</a></h3>
+              <p class="card-desc">第 6 轮红队先失一局，第二局换边后追平，决胜局在最后 40 秒完成反超。回放已上线，含每局关键节点的时间标记。</p>
+              <div class="card-tags"><span>秋季对抗赛</span><span>决胜局</span><span>比赛回放</span></div>
+              <div class="card-meta"><span>11 月 3 日</span><span class="score">2:1<small>比分</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-cover">
+              <img src="https://picsum.photos/seed/match51-quiz-solo/400/300" alt="知识竞赛个人赛抢答环节画面" width="400" height="300" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3><a href="#categories">知识竞赛个人赛：抢答节奏拆解</a></h3>
+              <p class="card-desc">个人赛共 30 题，前 10 题基础题、中间 10 题综合题、后 10 题抢答题。抢答题答错扣 1 分，因此后半程的出手时机比答题速度更关键。</p>
+              <div class="card-tags"><span>知识竞赛</span><span>个人赛</span><span>抢答策略</span></div>
+              <div class="card-meta"><span>11 月 5 日</span><span class="score">30<small>题量</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-cover">
+              <img src="https://picsum.photos/seed/match51-speedrun-team/400/300" alt="速通挑战组队赛双人配合画面" width="400" height="300" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3><a href="#categories">速通挑战组队赛：双人配合路线</a></h3>
+              <p class="card-desc">组队赛要求两名选手交替操作，交接点固定。当前最快组合为“林照野 + 周叙”，总用时 3 分 48 秒，交接失误仅 1 次。</p>
+              <div class="card-tags"><span>速通挑战</span><span>组队赛</span><span>双人配合</span></div>
+              <div class="card-meta"><span>11 月 4 日</span><span class="score">3:48<small>总用时</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-cover">
+              <img src="https://picsum.photos/seed/match51-ranking-nov/400/300" alt="秋季对抗赛小组积分榜画面" width="400" height="300" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3><a href="#rank">小组积分榜：红队暂列第一</a></h3>
+              <p class="card-desc">截至 11 月 7 日，红队积 9 分、蓝队 7 分、青队 5 分、黄队 3 分。第 8 轮红队与蓝队直接对话，胜者锁定小组头名。</p>
+              <div class="card-tags"><span>积分榜</span><span>小组赛</span><span>第 8 轮</span></div>
+              <div class="card-meta"><span>11 月 7 日</span><span class="score">9<small>红队积分</small></span></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 / 动态 -->
+      <section class="block anchor-target" id="updates" aria-labelledby="h-updates">
+        <div class="section-head">
+          <h2 id="h-updates">最新赛程与直播动态</h2>
+          <span class="sub">按时间倒序 · 更新至 2026-11-08</span>
+        </div>
+        <div class="panel">
+          <ul class="update-list">
+            <li>
+              <span class="update-time">今天 09:30</span>
+              <div class="update-main">
+                <a class="u-title" href="#featured">秋季对抗赛第 7 轮直播预约开放</a>
+                <p class="u-text">红队 vs 蓝队，今晚 19:30 开赛，直播入口已开放，赛前 15 分钟进入热身环节。</p>
+              </div>
+              <span class="update-tag live">直播</span>
+            </li>
+            <li>
+              <span class="update-time">今天 08:10</span>
+              <div class="update-main">
+                <a class="u-title" href="#featured">速通挑战周榜结算：林照野登顶</a>
+                <p class="u-text">11 月 2 日至 11 月 8 日周期结算，单人榜第一为林照野，组队榜第一为“林照野 + 周叙”。</p>
+              </div>
+              <span class="update-tag new">榜单</span>
+            </li>
+            <li>
+              <span class="update-time">昨天 21:10</span>
+              <div class="update-main">
+                <a class="u-title" href="#updates">第 6 轮决胜局完整回放上线</a>
+                <p class="u-text">红队 2:1 逆转黄队，回放含三局分段时间标记与关键节点标注。</p>
+              </div>
+              <span class="update-tag">回放</span>
+            </li>
+            <li>
+              <span class="update-time">昨天 17:40</span>
+              <div class="update-main">
+                <a class="u-title" href="#news">知识竞赛题库改版说明发布</a>
+                <p class="u-text">新增 240 道题目，历史类占比 32%，组队赛改为答对加分、答错扣分。</p>
+              </div>
+              <span class="update-tag new">规则</span>
+            </li>
+            <li>
+              <span class="update-time">11 月 6 日 20:25</span>
+              <div class="update-main">
+                <a class="u-title" href="#featured">速通挑战单人纪录刷新至 4 分 12 秒</a>
+                <p class="u-text">林照野在第二段跳台路线减少一次回头操作，比原纪录快 9 秒。</p>
+              </div>
+              <span class="update-tag">纪录</span>
+            </li>
+            <li>
+              <span class="update-time">11 月 6 日 14:00</span>
+              <div class="update-main">
+                <a class="u-title" href="#updates">知识竞赛个人赛第 5 轮排期公布</a>
+                <p class="u-text">11 月 9 日 20:00 开赛，30 题制，抢答题答错扣 1 分，报名截止 11 月 8 日 22:00。</p>
+              </div>
+              <span class="update-tag">赛程</span>
+            </li>
+            <li>
+              <span class="update-time">11 月 5 日 19:00</span>
+              <div class="update-main">
+                <a class="u-title" href="#featured">团队接力赛周末场分组抽签结果</a>
+                <p class="u-text">6 队分成两组，青队与红队同组，首场交接棒环节定于 11 月 7 日 15:00。</p>
+              </div>
+              <span class="update-tag">抽签</span>
+            </li>
+            <li>
+              <span class="update-time">11 月 4 日 16:30</span>
+              <div class="update-main">
+                <a class="u-title" href="#rank">小组积分榜更新：红队反超至第一</a>
+                <p class="u-text">第 6 轮结束后红队积 9 分，蓝队 7 分，青队 5 分，黄队 3 分。</p>
+              </div>
+              <span class="update-tag">积分</span>
+            </li>
+            <li>
+              <span class="update-time">11 月 3 日 21:00</span>
+              <div class="update-main">
+                <a class="u-title" href="#updates">秋季对抗赛第 6 轮回放预约</a>
+                <p class="u-text">红队 vs 黄队，回放上线后 24 小时内可查看多视角版本。</p>
+              </div>
+              <span class="update-tag">回放</span>
+            </li>
+            <li>
+              <span class="update-time">11 月 2 日 10:15</span>
+              <div class="update-main">
+                <a class="u-title" href="#news">速通挑战新增“无道具”赛道</a>
+                <p class="u-text">该赛道禁用所有加速道具，仅保留基础移动，首周记录为 4 分 51 秒。</p>
+              </div>
+              <span class="update-tag new">赛道</span>
+            </li>
+            <li>
+              <span class="update-time">11 月 1 日 18:20</span>
+              <div class="update-main">
+                <a class="u-title" href="#updates">秋季对抗赛第 5 轮战报：蓝队 2:0 取胜</a>
+                <p class="u-text">蓝队两局均在中期建立优势，红队第 2 局换阵后未能追平。</p>
+              </div>
+              <span class="update-tag">战报</span>
+            </li>
+            <li>
+              <span class="update-time">10 月 30 日 12:00</span>
+              <div class="update-main">
+                <a class="u-title" href="#news">知识竞赛历史类题目占比提升说明</a>
+                <p class="u-text">题库改版后历史类占比由 21% 提升至 32%，综合题与抢答题各占 30%。</p>
+              </div>
+              <span class="update-tag">题库</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="block anchor-target" id="categories" aria-labelledby="h-categories">
+        <div class="section-head">
+          <h2 id="h-categories">赛事分类入口</h2>
+          <span class="sub">按规则与赛制划分</span>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-item" href="#updates">
+            <div class="cat-name">团队对抗赛</div>
+            <div class="cat-desc">三局两胜制，按小组积分排名，适合看团队配合与换阵调整。</div>
+            <div class="cat-count">第 7 轮进行中</div>
+          </a>
+          <a class="cat-item" href="#featured">
+            <div class="cat-name">速通挑战</div>
+            <div class="cat-desc">按单局用时排名，分单人榜与组队榜，每周结算一次。</div>
+            <div class="cat-count">本周 12 条新纪录</div>
+          </a>
+          <a class="cat-item" href="#news">
+            <div class="cat-name">知识竞赛</div>
+            <div class="cat-desc">30 题制，含基础题、综合题与抢答题，分个人赛与组队赛。</div>
+            <div class="cat-count">题库改版已完成</div>
+          </a>
+          <a class="cat-item" href="#updates">
+            <div class="cat-name">团队接力赛</div>
+            <div class="cat-desc">强调交接棒效率，常见于周末场次，6 队两两分组。</div>
+            <div class="cat-count">周末场共 6 队</div>
+          </a>
+          <a class="cat-item" href="#rank">
+            <div class="cat-name">积分榜单</div>
+            <div class="cat-desc">汇总四条主线的积分与用时排名，按周期更新。</div>
+            <div class="cat-count">红队暂列第一</div>
+          </a>
+          <a class="cat-item" href="#deep">
+            <div class="cat-name">赛制解析</div>
+            <div class="cat-desc">拆解三局两胜、单局限时与抢答扣分的具体判定方式。</div>
+            <div class="cat-count">4 个解析专题</div>
+          </a>
+          <a class="cat-item" href="#guide">
+            <div class="cat-name">观赛指南</div>
+            <div class="cat-desc">从赛程节奏、回合价值与选手风格三个角度选择观看顺序。</div>
+            <div class="cat-count">5 条观看路径</div>
+          </a>
+          <a class="cat-item" href="#comments">
+            <div class="cat-name">观众讨论</div>
+            <div class="cat-desc">围绕具体对局、选手表现与规则调整的观众评论汇总。</div>
+            <div class="cat-count">16 条评论</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析正文 -->
+      <section class="block anchor-target" id="deep" aria-labelledby="h-deep">
+        <div class="deep-card panel">
+          <h2 id="h-deep">每日大赛51四条主线的赛制差异与观看重点</h2>
+          <p class="deep-lead">从判定方式、回合结构与选手能力三个维度，拆解团队对抗赛、速通挑战、知识竞赛与团队接力赛的不同看点。</p>
+
+          <h3>团队对抗赛：三局两胜下的换阵价值</h3>
+          <p>团队对抗赛采用三局两胜制，首局地图由积分较低一方选择，决胜局回到中立地图。这一规则意味着积分领先的队在首局处于被动，需要准备两套以上开局方案。第 6 轮红队先失一局、第二局换边后追平，决胜局在最后 40 秒完成反超，正是换阵价值的直接体现。</p>
+          <p>观看团队对抗赛时，首局重点看开局地图的针对性布置，第二局看落后一方的换阵是否奏效，决胜局看双方在中立地图上的资源分配。三局之间的间隔通常为 10 分钟，换阵与调整大多发生在这段时间内。</p>
+          <ul>
+            <li><strong>首局：</strong>积分较低一方选图，常见针对性禁选。</li>
+            <li><strong>第二局：</strong>换边后进行，落后一方多在此局调整阵容。</li>
+            <li><strong>决胜局：</strong>中立地图，资源分配与最后 40 秒的处理决定胜负。</li>
+          </ul>
+
+          <h3>速通挑战：用时排名与路线优化</h3>
+          <p>速通挑战按单局用时排名，分单人榜与组队榜。单人榜看路线选择与操作精度，组队榜看交接点的配合。11 月 6 日林照野将单人纪录刷新至 4 分 12 秒，关键改动在第二段跳台路线减少一次回头操作，第三段保留原路线。这类优化通常只带来几秒提升，但在榜单前列差距往往就在几秒之间。</p>
+          <p>11 月 2 日新增的“无道具”赛道禁用所有加速道具，仅保留基础移动，首周记录为 4 分 51 秒。无道具赛道更考验基础路线熟练度，对有道具赛道依赖加速的选手形成额外挑战。</p>
+          <div class="callout">
+            <b>判断一条速通记录是否值得参考：</b>先看赛道类型（有道具 / 无道具），再看是否组队，最后看交接失误次数。三项都接近的记录才具备直接比较价值。
+          </div>
+
+          <h3>知识竞赛：题型结构与抢答扣分</h3>
+          <p>知识竞赛个人赛共 30 题，前 10 题为基础题、中间 10 题为综合题、后 10 题为抢答题。抢答题答错扣 1 分，因此后半程的出手时机比答题速度更关键。11 月 6 日题库改版后，历史类题目占比由 21% 提升至 32%，综合题与抢答题各占 30%。</p>
+          <p>组队赛规则同步调整为先答对加分、答错扣分，抢答阶段每题限时 15 秒。与个人赛相比，组队赛的分工更明确：一名选手负责判断题型，另一名负责在确认后出手。分工清晰的队伍在抢答阶段的失误率通常更低。</p>
+          <table class="compare-table">
+            <thead>
+              <tr><th>维度</th><th>个人赛</th><th>组队赛</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>题量</td><td>30 题</td><td>30 题，两人分工</td></tr>
+              <tr><td>抢答限时</td><td>每题 10 秒</td><td>每题 15 秒</td></tr>
+              <tr><td>答错处理</td><td>扣 1 分</td><td>扣 1 分</td></tr>
+              <tr><td>关键能力</td><td>题型判断与出手时机</td><td>分工确认与出手一致性</td></tr>
+            </tbody>
+          </table>
+
+          <h3>团队接力赛：交接棒效率的量化</h3>
+          <p>团队接力赛强调交接棒效率，常见于周末场次。11 月 7 日周末场共 6 队参加，交接棒环节平均耗时 2.8 秒。青队以 2.1 秒的平均交接耗时排名第一，红队因两次失误掉到第四。交接失误通常发生在交接点前后 1 秒内，因此训练重点往往放在交接前的减速与站位上。</p>
+          <p>接力赛的胜负往往不取决于单棒速度，而取决于三次交接的稳定性。一次 0.5 秒的交接延误，在四棒累计后可能放大为 2 秒以上的差距。观看接力赛时，可以重点记录每队的交接耗时，而不是只看单棒冲刺。</p>
+          <ol>
+            <li>记录每棒进入交接区的减速时机。</li>
+            <li>观察交接瞬间的站位是否提前对齐。</li>
+            <li>统计三次交接的总耗时，与单棒速度分开比较。</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section class="block anchor-target" id="guide" aria-labelledby="h-guide">
+        <div class="section-head">
+          <h2 id="h-guide">观赛与内容消费路径</h2>
+          <span class="sub">按观看目的选择顺序</span>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <div>
+              <h3>先确定观看目的：看结果还是看过程</h3>
+              <p>如果只想了解比分与排名，直接看积分榜与赛程更新即可；如果想看具体回合的处理，选择带时间标记的回放。两种目的对应不同的入口，混用会浪费时间。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div>
+              <h3>按主线选择：对抗赛看配合，速通看纪录</h3>
+              <p>团队对抗赛的核心看点是换阵与决胜局处理，速通挑战的核心看点是纪录刷新与路线优化。第一次接触时，建议从秋季对抗赛第 6 轮回放入手，节奏完整且含决胜局。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div>
+              <h3>判断一条记录是否值得投入时间</h3>
+              <p>速通记录先看赛道类型与是否组队，再看交接失误次数；知识竞赛看题型分布与抢答阶段表现；接力赛看三次交接的总耗时。三项信息齐全的条目，才适合作为比较依据。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div>
+              <h3>类似条目怎么比较：先看规则再看数据</h3>
+              <p>同样是“2:1”，三局两胜与五局三胜的含义不同；同样是“4 分 12 秒”，有道具与无道具赛道不可直接比较。比较前先确认赛制与赛道，再对比用时、积分或交接耗时。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div>
+              <h3>跟赛节奏：按比赛日而不是按榜单</h3>
+              <p>每日大赛51按比赛日连续推进，榜单只是阶段结果。跟着比赛日看，能看清每轮之间的调整；只跟榜单，容易错过换阵与规则变化带来的转折。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="block anchor-target" id="faq" aria-labelledby="h-faq">
+        <div class="section-head">
+          <h2 id="h-faq">常见问题</h2>
+          <span class="sub">赛制、纪录与观看顺序</span>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>每日大赛51的秋季对抗赛一般多久进行一轮？</summary>
+            <div class="faq-body">
+              <p>秋季对抗赛通常每周进行一轮，每轮包含三局两胜的对局。第 5 轮在 11 月 1 日、第 6 轮在 11 月 3 日、第 7 轮在 11 月 8 日，间隔会根据场地与直播排期略有调整。每轮结束后 24 小时内更新积分榜。</p>
+            </div>
+          </details>
+          <details>
+            <summary>速通挑战的单人榜和组队榜有什么区别？</summary>
+            <div class="faq-body">
+              <p>单人榜按一名选手完成全程的用时排名，组队榜按两名选手交替操作的总用时排名。组队榜额外统计交接失误次数，交接点固定，失误会直接计入总用时。两个榜单分开结算，不互相换算。</p>
+            </div>
+          </details>
+          <details>
+            <summary>第一次看每日大赛51，从哪一场开始比较好？</summary>
+            <div class="faq-body">
+              <p>建议从秋季对抗赛第 6 轮回放开始。该场含三局完整对局，第二局有换阵、决胜局有最后 40 秒反超，能同时看到赛制结构与关键节点。看完后再选择速通挑战或知识竞赛，理解成本更低。</p>
+            </div>
+          </details>
+          <details>
+            <summary>知识竞赛的抢答题答错会怎样？</summary>
+            <div class="faq-body">
+              <p>个人赛与组队赛的抢答题答错均扣 1 分，个人赛每题限时 10 秒，组队赛每题限时 15 秒。因此抢答阶段并非越快越好，确认题型后再出手更稳妥。</p>
+            </div>
+          </details>
+          <details>
+            <summary>有道具赛道和无道具赛道的纪录能直接比较吗？</summary>
+            <div class="faq-body">
+              <p>不能。无道具赛道禁用所有加速道具，仅保留基础移动，整体用时会明显长于有道具赛道。比较纪录时必须先确认赛道类型，再看是否组队，最后看交接失误次数。</p>
+            </div>
+          </details>
+          <details>
+            <summary>团队接力赛的交接失误一般出现在什么位置？</summary>
+            <div class="faq-body">
+              <p>交接失误多发生在交接点前后 1 秒内，常见原因是进入交接区时减速过早或站位未提前对齐。11 月 7 日周末场中，红队的两次失误都出现在第二次交接的站位调整上。</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="block anchor-target" id="comments" aria-labelledby="h-comments">
+        <div class="section-head">
+          <h2 id="h-comments">观众评论</h2>
+          <span class="sub">围绕具体对局与规则调整</span>
+        </div>
+        <div class="comment-grid">
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#e8743b">陈</span><span class="c-name">陈屿舟</span><span class="c-time">今天 10:12</span></div>
+            <p class="c-text">第 6 轮决胜局最后 40 秒那次反超处理得很干净，红队第二局换阵之后节奏明显不一样了。</p>
+            <span class="c-item">秋季对抗赛第 6 轮</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#1f8a83">林</span><span class="c-name">林知夏</span><span class="c-time">今天 09:45</span></div>
+            <p class="c-text">4 分 12 秒这个纪录第二段跳台的改动确实关键，少一次回头省下来的时间比想象中多。</p>
+            <span class="c-item">速通挑战单人纪录</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#2c4370">周</span><span class="c-name">周叙白</span><span class="c-time">今天 08:30</span></div>
+            <p class="c-text">组队速通 3 分 48 秒那个交接点选得偏保守，如果换成更早的交接位，理论上还能再快一点。</p>
+            <span class="c-item">速通挑战组队赛</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#6f92d4">吴</span><span class="c-name">吴念安</span><span class="c-time">昨天 22:18</span></div>
+            <p class="c-text">题库改版之后历史类题目明显变多了，抢答题答错扣分这条对习惯盲抢的人不太友好。</p>
+            <span class="c-item">知识竞赛题库改版</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#e8743b">赵</span><span class="c-name">赵清和</span><span class="c-time">昨天 20:05</span></div>
+            <p class="c-text">青队平均交接 2.1 秒有点夸张，看回放他们的站位几乎在进入交接区之前就对齐了。</p>
+            <span class="c-item">团队接力赛周末场</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#1f8a83">孙</span><span class="c-name">孙渡</span><span class="c-time">昨天 18:47</span></div>
+            <p class="c-text">红队第 5 轮被蓝队 2:0，主要还是首局选图太激进，换到中立地图就没那么被动。</p>
+            <span class="c-item">秋季对抗赛第 5 轮</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#2c4370">郑</span><span class="c-name">郑星野</span><span class="c-time">11 月 7 日 23:30</span></div>
+            <p class="c-text">无道具赛道首周 4 分 51 秒，感觉这个纪录还能再压，基础移动的路线还没完全优化。</p>
+            <span class="c-item">无道具赛道</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#6f92d4">何</span><span class="c-name">何知遥</span><span class="c-time">11 月 7 日 21:02</span></div>
+            <p class="c-text">个人赛后半程抢答扣分确实让出手更谨慎了，前 20 题的分差反而不如最后 10 题关键。</p>
+            <span class="c-item">知识竞赛个人赛</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#e8743b">冯</span><span class="c-name">冯照</span><span class="c-time">11 月 7 日 19:40</span></div>
+            <p class="c-text">积分榜红队 9 分、蓝队 7 分，第 8 轮直接对话基本就是小组头名争夺战了。</p>
+            <span class="c-item">小组积分榜</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#1f8a83">许</span><span class="c-name">许照临</span><span class="c-time">11 月 6 日 22:15</span></div>
+            <p class="c-text">第 6 轮回放的多视角版本比单视角好用，第二局换边的细节终于看清楚了。</p>
+            <span class="c-item">第 6 轮回放</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#2c4370">沈</span><span class="c-name">沈砚秋</span><span class="c-time">11 月 6 日 20:50</span></div>
+            <p class="c-text">组队赛分工清晰的队伍抢答失误确实少，但遇到综合题判断不一致时会互相等，反而慢。</p>
+            <span class="c-item">知识竞赛组队赛</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#6f92d4">韩</span><span class="c-name">韩青屿</span><span class="c-time">11 月 6 日 14:22</span></div>
+            <p class="c-text">周末场 6 队分组之后青队和红队同组，首场 15:00 开赛，交接环节应该会很好看。</p>
+            <span class="c-item">团队接力赛抽签</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#e8743b">曹</span><span class="c-name">曹映川</span><span class="c-time">11 月 5 日 21:36</span></div>
+            <p class="c-text">三局两胜首局由积分低的一方选图，这个规则对落后队其实挺友好，第 6 轮红队就是这么翻的。</p>
+            <span class="c-item">三局两胜赛制</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#1f8a83">罗</span><span class="c-name">罗时安</span><span class="c-time">11 月 5 日 19:10</span></div>
+            <p class="c-text">速通挑战的周榜结算时间放在周日早上，看完周末场再刷榜刚好，节奏比较顺。</p>
+            <span class="c-item">速通挑战周榜</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#2c4370">谢</span><span class="c-name">谢云归</span><span class="c-time">11 月 4 日 22:48</span></div>
+            <p class="c-text">第 6 轮第二局换边之后红队的资源分配明显更集中，这一点值得单独回看。</p>
+            <span class="c-item">秋季对抗赛第 6 轮</span>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#6f92d4">唐</span><span class="c-name">唐见山</span><span class="c-time">11 月 3 日 18:05</span></div>
+            <p class="c-text">接力赛单棒速度其实差距不大，真正拉开距离的还是交接，红队两次失误直接掉两名。</p>
+            <span class="c-item">团队接力赛交接效率</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="block anchor-target" id="news" aria-labelledby="h-news">
+        <div class="section-head">
+          <h2 id="h-news">相关资讯</h2>
+          <span class="sub">赛程与规则变动</span>
+        </div>
+        <div class="news-list">
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/match51-news-quiz/600/400" alt="知识竞赛题库改版说明配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <h3><a href="#faq">知识竞赛题库 11 月 6 日改版：新增 240 题，历史类占 32%</a></h3>
+              <div class="news-meta"><span class="n-cat">规则调整</span><span>2026-11-06</span></div>
+              <p>改版后历史类题目占比由 21% 提升至 32%，综合题与抢答题各占 30%，组队赛改为答对加分、答错扣分。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/match51-news-speed/600/400" alt="速通挑战单人纪录刷新配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <h3><a href="#featured">速通挑战单人纪录刷新至 4 分 12 秒，林照野登顶周榜</a></h3>
+              <div class="news-meta"><span class="n-cat">纪录刷新</span><span>2026-11-06</span></div>
+              <p>第二段跳台路线减少一次回头操作，比原纪录快 9 秒。组队榜第一为“林照野 + 周叙”，总用时 3 分 48 秒。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/match51-news-track/600/400" alt="无道具赛道新增说明配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <h3><a href="#deep">速通挑战新增“无道具”赛道，首周记录 4 分 51 秒</a></h3>
+              <div class="news-meta"><span class="n-cat">赛道新增</span><span>2026-11-02</span></div>
+              <p>该赛道禁用所有加速道具，仅保留基础移动，更考验基础路线熟练度，与有道具赛道分开结算。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/match51-news-round6/600/400" alt="秋季对抗赛第6轮战报配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <h3><a href="#updates">秋季对抗赛第 6 轮：红队 2:1 逆转黄队，决胜局最后 40 秒反超</a></h3>
+              <div class="news-meta"><span class="n-cat">战报</span><span>2026-11-03</span></div>
+              <p>红队先失一局，第二局换边后追平，决胜局在中立地图完成反超，回放含三局分段时间标记。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/match51-news-ranking/600/400" alt="小组积分榜更新配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <h3><a href="#rank">小组积分榜更新：红队 9 分反超，第 8 轮与蓝队直接对话</a></h3>
+              <div class="news-meta"><span class="n-cat">积分更新</span><span>2026-11-04</span></div>
+              <p>截至 11 月 7 日，红队积 9 分、蓝队 7 分、青队 5 分、黄队 3 分，第 8 轮胜者锁定小组头名。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/match51-news-relay/600/400" alt="团队接力赛周末场分组配图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <h3><a href="#featured">团队接力赛周末场分组抽签：6 队分两组，青队与红队同组</a></h3>
+              <div class="news-meta"><span class="n-cat">抽签结果</span><span>2026-11-05</span></div>
+              <p>首场交接棒环节定于 11 月 7 日 15:00，青队平均交接 2.1 秒排名第一，红队因两次失误位列第四。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="block anchor-target" id="reco" aria-labelledby="h-reco">
+        <div class="section-head">
+          <h2 id="h-reco">延伸方向与相关条目</h2>
+          <span class="sub">按类型与赛制延伸</span>
+        </div>
+        <div class="reco-tags">
+          <a href="#deep">三局两胜换阵思路<span>赛制</span></a>
+          <a href="#featured">无道具速通路线<span>赛道</span></a>
+          <a href="#news">知识竞赛历史类题库<span>题库</span></a>
+          <a href="#guide">交接棒减速时机<span>接力</span></a>
+          <a href="#rank">小组积分同分规则<span>排名</span></a>
+          <a href="#faq">抢答扣分出手时机<span>策略</span></a>
+          <a href="#comments">第 6 轮决胜局回看<span>回放</span></a>
+          <a href="#updates">周末场赛程排期<span>赛程</span></a>
+        </div>
+      </section>
+
+      <!-- 11. 补充板块：积分榜单 + 条目时间线 -->
+      <section class="block anchor-target" id="rank" aria-labelledby="h-rank">
+        <div class="section-head">
+          <h2 id="h-rank">小组积分与速通用时榜单</h2>
+          <span class="sub">截至 2026-11-07</span>
+        </div>
+        <div class="panel">
+          <ol class="rank-list">
+            <li><span class="rank-no">1</span><span class="rank-name">红队<small>秋季对抗赛 · 3 胜 1 负</small></span><span class="rank-heat">9 分</span></li>
+            <li><span class="rank-no">2</span><span class="rank-name">蓝队<small>秋季对抗赛 · 2 胜 2 负</small></span><span class="rank-heat">7 分</span></li>
+            <li><span class="rank-no">3</span><span class="rank-name">青队<small>秋季对抗赛 · 2 胜 2 负</small></span><span class="rank-heat">5 分</span></li>
+            <li><span class="rank-no">4</span><span class="rank-name">黄队<small>秋季对抗赛 · 1 胜 3 负</small></span><span class="rank-heat">3 分</span></li>
+            <li><span class="rank-no">5</span><span class="rank-name">林照野<small>速通挑战 · 单人榜</small></span><span class="rank-heat">4:12</span></li>
+            <li><span class="rank-no">6</span><span class="rank-name">林照野 + 周叙<small>速通挑战 · 组队榜</small></span><span class="rank-heat">3:48</span></li>
+            <li><span class="rank-no">7</span><span class="rank-name">周叙<small>速通挑战 · 无道具赛道</small></span><span class="rank-heat">4:51</span></li>
+            <li><span class="rank-no">8</span><span class="rank-name">青队<small>团队接力赛 · 平均交接</small></span><span class="rank-heat">2.1s</span></li>
+            <li><span class="rank-no">9</span><span class="rank-name">何知遥<small>知识竞赛 · 个人赛</small></span><span class="rank-heat">27 分</span></li>
+            <li><span class="rank-no">10</span><span class="rank-name">红队 + 青队<small>知识竞赛 · 组队赛</small></span><span class="rank-heat">25 分</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="block" id="timeline" aria-labelledby="h-timeline">
+        <div class="section-head">
+          <h2 id="h-timeline">11 月赛程条目时间线</h2>
+          <span class="sub">10 月 30 日至 11 月 8 日</span>
+        </div>
+        <div class="panel" style="padding:18px 20px">
+          <ul class="timeline-aside" style="padding-left:4px">
+            <li><span class="tl-date">11 月 8 日</span><span class="tl-text">秋季对抗赛第 7 轮 19:30 开赛，红队 vs 蓝队，三局两胜。</span></li>
+            <li><span class="tl-date">11 月 7 日</span><span class="tl-text">团队接力赛周末场 15:00 开赛，青队平均交接 2.1 秒排名第一。</span></li>
+            <li><span class="tl-date">11 月 6 日</span><span class="tl-text">知识竞赛题库改版，新增 240 题；速通单人纪录刷新至 4 分 12 秒。</span></li>
+            <li><span class="tl-date">11 月 5 日</span><span class="tl-text">团队接力赛分组抽签，6 队分两组；知识竞赛个人赛第 5 轮排期公布。</span></li>
+            <li><span class="tl-date">11 月 4 日</span><span class="tl-text">小组积分榜更新，红队 9 分反超至第一。</span></li>
+            <li><span class="tl-date">11 月 3 日</span><span class="tl-text">秋季对抗赛第 6 轮，红队 2:1 逆转黄队，回放上线。</span></li>
+            <li><span class="tl-date">11 月 2 日</span><span class="tl-text">速通挑战新增“无道具”赛道，首周记录 4 分 51 秒。</span></li>
+            <li><span class="tl-date">11 月 1 日</span><span class="tl-text">秋季对抗赛第 5 轮，蓝队 2:0 战胜红队。</span></li>
+            <li><span class="tl-date">10 月 30 日</span><span class="tl-text">知识竞赛历史类题目占比提升说明发布，由 21% 提升至 32%。</span></li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="aside-col" aria-label="辅助信息">
+      <section class="aside-panel panel">
+        <h2>今日热榜</h2>
+        <ol class="hot-aside-list">
+          <li><span class="ha-no">1</span><a href="#featured">秋季对抗赛第 7 轮红队 vs 蓝队</a></li>
+          <li><span class="ha-no">2</span><a href="#featured">林照野 4 分 12 秒单人纪录</a></li>
+          <li><span class="ha-no">3</span><a href="#news">知识竞赛题库改版新增 240 题</a></li>
+          <li><span class="ha-no">4</span><a href="#featured">团队接力赛周末场交接效率榜</a></li>
+          <li><span class="ha-no">5</span><a href="#updates">第 6 轮决胜局回放上线</a></li>
+          <li><span class="ha-no">6</span><a href="#rank">小组积分榜红队反超</a></li>
+          <li><span class="ha-no">7</span><a href="#deep">无道具赛道首周记录</a></li>
+          <li><span class="ha-no">8</span><a href="#featured">速通组队赛双人配合路线</a></li>
+        </ol>
+      </section>
+
+      <section class="aside-panel panel">
+        <h2>近期更新</h2>
+        <ul class="timeline-aside">
+          <li><span class="tl-date">今天 09:30</span><span class="tl-text">第 7 轮直播预约开放</span></li>
+          <li><span class="tl-date">今天 08:10</span><span class="tl-text">速通挑战周榜结算</span></li>
+          <li><span class="tl-date">昨天 21:10</span><span class="tl-text">第 6 轮完整回放上线</span></li>
+          <li><span class="tl-date">11 月 6 日</span><span class="tl-text">题库改版说明发布</span></li>
+          <li><span class="tl-date">11 月 4 日</span><span class="tl-text">小组积分榜更新</span></li>
+        </ul>
+      </section>
+
+      <section class="aside-panel aside-subscribe">
+        <h2>赛程提醒</h2>
+        <p>按比赛日推送每日大赛51的赛程与直播入口，开赛前 30 分钟提醒。</p>
+        <a class="sub-btn" href="#updates">查看今日赛程</a>
+      </section>
+    </aside>
+
+  </div>
+</div>
+
+<!-- ===== 页尾 ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="fb-logo">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#2c4370"/>
+            <path d="M18 44 L32 16 L46 44 Z" fill="none" stroke="#f5a623" stroke-width="4" stroke-linejoin="round"/>
+            <circle cx="32" cy="37" r="4.5" fill="#e8743b"/>
+          </svg>
+          <span class="fb-name">每日大赛51在线观看</span>
+        </div>
+        <p>汇聚每日大赛51的赛程、对战直播入口、比赛回放与选手表现，覆盖团队对抗赛、速通挑战、知识竞赛与团队接力赛四条主线。</p>
+      </div>
+      <div class="footer-col">
+        <h3>赛程栏目</h3>
+        <ul>
+          <li><a href="#updates">最新赛程与直播动态</a></li>
+          <li><a href="#featured">精选对战与挑战条目</a></li>
+          <li><a href="#rank">小组积分与用时榜单</a></li>
+          <li><a href="#timeline">11 月赛程时间线</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>赛制解析</h3>
+        <ul>
+          <li><a href="#deep">三局两胜换阵思路</a></li>
+          <li><a href="#deep">速通用时排名规则</a></li>
+          <li><a href="#deep">知识竞赛抢答扣分</a></li>
+          <li><a href="#guide">观赛与内容消费路径</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>讨论与问答</h3>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#comments">观众评论</a></li>
+          <li><a href="#news">相关资讯</a></li>
+          <li><a href="#reco">延伸方向与相关条目</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>每日大赛51在线观看 · 内容聚合示例页</span>
+      <span class="disclaimer">部分内容为示例数据，仅用于展示页面结构</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // 本地内容搜索：在页面可见文本中查找并定位
+  var input = document.getElementById('siteSearch');
+  var hint = document.getElementById('searchHint');
+  if (!input || !hint) return;
+
+  var searchables = [];
+  document.querySelectorAll('main h2, main h3, main .u-title, main .cat-name, main .rank-name, main summary, main .reco-tags a, main .hot-aside-list a').forEach(function (el) {
+    var text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (text) searchables.push({ el: el, text: text });
+  });
+
+  function targetId(el) {
+    var node = el;
+    while (node && node !== document.body) {
+      if (node.id) return node.id;
+      node = node.parentElement;
+    }
+    return null;
+  }
+
+  function run() {
+    var q = input.value.trim().toLowerCase();
+    if (!q) { hint.classList.remove('show'); hint.innerHTML = ''; return; }
+    var hits = searchables.filter(function (s) { return s.text.toLowerCase().indexOf(q) !== -1; }).slice(0, 6);
+    hint.classList.add('show');
+    if (!hits.length) {
+      hint.innerHTML = '<b>没有找到匹配内容</b><br>可尝试“速通”“接力”“题库”“积分榜”等关键词。';
+      return;
+    }
+    var html = '<b>找到 ' + hits.length + ' 条相关内容</b><ul style="list-style:none;padding:0;margin:8px 0 0">';
+    hits.forEach(function (h) {
+      var id = targetId(h.el);
+      var label = h.text.length > 26 ? h.text.slice(0, 26) + '…' : h.text;
+      html += '<li style="margin-bottom:6px">' + (id ? '<a href="#' + id + '" data-jump="' + id + '" style="color:#2c4370">' + label + '</a>' : label) + '</li>';
+    });
+    html += '</ul>';
+    hint.innerHTML = html;
+  }
+
+  input.addEventListener('input', run);
+  input.addEventListener('focus', function () { if (input.value.trim()) run(); });
+  hint.addEventListener('click', function (e) {
+    var a = e.target.closest('a[data-jump]');
+    if (a) { hint.classList.remove('show'); input.blur(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.search-box')) hint.classList.remove('show');
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { hint.classList.remove('show'); input.blur(); }
+  });
+})();
+</script>
+
+</body>
+  </html>
